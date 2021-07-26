@@ -29,7 +29,7 @@ namespace BomTreeView
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.bomTreeView = new System.Windows.Forms.TreeView();
             this.componentNameDisplay = new System.Windows.Forms.Label();
             this.componentNameLabel = new System.Windows.Forms.Label();
             this.quantityDisplay = new System.Windows.Forms.Label();
@@ -41,14 +41,14 @@ namespace BomTreeView
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeView1
+            // bomTreeView
             // 
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(200, 450);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
-            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseDoubleClick);
+            this.bomTreeView.Location = new System.Drawing.Point(0, 0);
+            this.bomTreeView.Name = "bomTreeView";
+            this.bomTreeView.Size = new System.Drawing.Size(200, 450);
+            this.bomTreeView.TabIndex = 0;
+            this.bomTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.BomTreeView_AfterSelect);
+            this.bomTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.BomTreeView_NodeMouseDoubleClick);
             // 
             // componentNameDisplay
             // 
@@ -141,10 +141,10 @@ namespace BomTreeView
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.componentNameLabel);
             this.Controls.Add(this.componentNameDisplay);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.bomTreeView);
             this.Name = "BomDisplayer";
             this.Text = "BOM Displayer";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.BomDisplayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,7 +153,7 @@ namespace BomTreeView
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView bomTreeView;
         private System.Windows.Forms.Label componentNameDisplay;
         private System.Windows.Forms.Label componentNameLabel;
         private System.Windows.Forms.Label quantityDisplay;
