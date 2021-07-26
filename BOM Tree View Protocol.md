@@ -84,6 +84,13 @@
     * TYPE
     * ITEM
     * MATERIAL
+  * I now finished creating a small dummy data-structure and was able to confirm that this results in the desired data being displayed
+  * I also played around with the UI a bit until I came up with something that will do for now
+
+* Next, I'm going to add the buttons for importing data and exiting from the application
+
+  * I'll start with the exit button first since that one is easier, and that way I won't risk forgetting it later
+  *  
 
 
 

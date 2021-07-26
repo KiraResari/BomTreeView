@@ -48,14 +48,16 @@ namespace BomTreeView
             this.titleDisplay = new System.Windows.Forms.Label();
             this.materialDisplay = new System.Windows.Forms.Label();
             this.parentDisplay = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.componentOverviewLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
             this.SuspendLayout();
             // 
             // bomTreeView
             // 
-            this.bomTreeView.Location = new System.Drawing.Point(0, 0);
+            this.bomTreeView.Location = new System.Drawing.Point(0, 20);
             this.bomTreeView.Name = "bomTreeView";
-            this.bomTreeView.Size = new System.Drawing.Size(200, 450);
+            this.bomTreeView.Size = new System.Drawing.Size(200, 390);
             this.bomTreeView.TabIndex = 0;
             this.bomTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.BomTreeView_AfterSelect);
             this.bomTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.BomTreeView_NodeMouseDoubleClick);
@@ -233,11 +235,33 @@ namespace BomTreeView
             this.parentDisplay.TabIndex = 18;
             this.parentDisplay.Text = "[Parent Display]";
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(12, 427);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(176, 23);
+            this.exitButton.TabIndex = 19;
+            this.exitButton.Text = "Exit BOM Displayer";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // componentOverviewLabel
+            // 
+            this.componentOverviewLabel.AutoSize = true;
+            this.componentOverviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentOverviewLabel.Location = new System.Drawing.Point(9, 4);
+            this.componentOverviewLabel.Name = "componentOverviewLabel";
+            this.componentOverviewLabel.Size = new System.Drawing.Size(127, 13);
+            this.componentOverviewLabel.TabIndex = 20;
+            this.componentOverviewLabel.Text = "Component Overview";
+            // 
             // BomDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.componentOverviewLabel);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.parentDisplay);
             this.Controls.Add(this.materialDisplay);
             this.Controls.Add(this.titleDisplay);
@@ -287,6 +311,8 @@ namespace BomTreeView
         private System.Windows.Forms.Label titleDisplay;
         private System.Windows.Forms.Label materialDisplay;
         private System.Windows.Forms.Label parentDisplay;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label componentOverviewLabel;
     }
 }
 
