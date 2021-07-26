@@ -54,8 +54,6 @@
       <DependentUpon>BomDisplayer.cs</DependentUpon>
     </Compile>
     <Compile Include="BomEntry.cs" />
-    <Compile Include="GameCharacter.cs" />
-    <Compile Include="GameCharacterRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BomDisplayer.resx">
