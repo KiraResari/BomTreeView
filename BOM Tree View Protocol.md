@@ -28,10 +28,11 @@
       * **SUCCESS:** Using this tutorial I now managed to add a Table View, and already have a relatively good idea of how to populate it using the children data
   * Experimenting with this, I now managed to create logic that displays the children of whatever character is selected in the data table
 * This is as far as I'm getting with this today
+* Elapsed time: ~3 hours
 
 
 
-## 26-Jul-2021
+# 26-Jul-2021
 
 * Now continuing with this
 
@@ -90,7 +91,37 @@
 * Next, I'm going to add the buttons for importing data and exiting from the application
 
   * I'll start with the exit button first since that one is easier, and that way I won't risk forgetting it later
-  *  
+    * As expected, this was straightforward and easy
+  * Next, the import button
+    * This is going to be more complicated since I'll first have to write the importer  
+      * I realize that I'll effectively have to create three "Importers" here, along with probably some interim classes to keep it all clean:
+        * One `BomImporter` to import the `bom.csv`
+          * This will create a list of `BomBaseEntry`
+        * One `PartImporter` to import the `part.csv`
+          * This will create a list of `PartBaseEntry`
+        * One `CombinedImporter` to combine both imports into a `BomEntry`
+      * I'll start with the BomImporter
+        * Since CSV import is something pretty basic I'm sure there'll be some utilities for this already, so I'll look for a tutorial on that
+          * Maybe this one will help?
+            * https://zetcode.com/csharp/csv/
+              * The problem with this one is that the CsvHelper used inside is apparently an external resource
+              * However, since I will need external resources at the latest when I add a database, I suppose I'll have to figure out how to use these anyway, so might as well do that now
+                * So, apparently the Gradle-Equivalent to JAva in C# is NuGet (I remember dealing with that before when I worked for Netfira), and the page for the CsvHelper there is: https://www.nuget.org/packages/CsvHelper/
+                  * I also note that the CsvHelper has 53,703,318 downloads, so odds are that this is a good package to work with 
+                * Now I just need to figure out what the equivalent for the `buidl.gradle` is with NuGet
+                  * It says here (https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) that I can simply add a package reference in my project file using an XML syntax, but I can't find a single XML file in the whole project
+                  * Ah, I figured it out. What you need to do is right-click on "References" and then click "Manage NuGet Packages"
+                    * Actually, it feels like I already did this, but that was many years ago
+              * At any rate, now I have the CsvHelper package successfully imported and have learned/remembered how to add additional packages if I need them
+              * Using this tutorial I now managed to set up the importers for the `bom.csv` and the `part.csv`
+              * However, I do not yet know if they work as intended
+              * This is where tests come in! Thus far my code was missing those anyway, so I'm looking forward to adding a few tests to ascertain that the imports work as intended
+  
+* This is as far as I'm getting today
+
+* Elapsed time today: ~3 hours
+
+* Total elapsed time: ~6 hours
 
 
 
