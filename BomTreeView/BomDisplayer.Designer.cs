@@ -38,6 +38,16 @@ namespace BomTreeView
             this.typeDisplay = new System.Windows.Forms.Label();
             this.childrenTable = new System.Windows.Forms.DataGridView();
             this.childrenLabel = new System.Windows.Forms.Label();
+            this.itemLabel = new System.Windows.Forms.Label();
+            this.partNumberLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.materialLabel = new System.Windows.Forms.Label();
+            this.parentLabel = new System.Windows.Forms.Label();
+            this.itemDisplay = new System.Windows.Forms.Label();
+            this.partNumberDisplay = new System.Windows.Forms.Label();
+            this.titleDisplay = new System.Windows.Forms.Label();
+            this.materialDisplay = new System.Windows.Forms.Label();
+            this.parentDisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +92,7 @@ namespace BomTreeView
             // 
             this.typeLabel.AutoSize = true;
             this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typeLabel.Location = new System.Drawing.Point(275, 60);
+            this.typeLabel.Location = new System.Drawing.Point(282, 60);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(39, 13);
             this.typeLabel.TabIndex = 4;
@@ -113,26 +123,131 @@ namespace BomTreeView
             this.childrenTable.AllowUserToAddRows = false;
             this.childrenTable.AllowUserToDeleteRows = false;
             this.childrenTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.childrenTable.Location = new System.Drawing.Point(267, 96);
+            this.childrenTable.Location = new System.Drawing.Point(267, 200);
             this.childrenTable.Name = "childrenTable";
-            this.childrenTable.Size = new System.Drawing.Size(423, 150);
+            this.childrenTable.Size = new System.Drawing.Size(800, 250);
             this.childrenTable.TabIndex = 7;
             // 
             // childrenLabel
             // 
             this.childrenLabel.AutoSize = true;
             this.childrenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.childrenLabel.Location = new System.Drawing.Point(264, 80);
+            this.childrenLabel.Location = new System.Drawing.Point(264, 180);
             this.childrenLabel.Name = "childrenLabel";
             this.childrenLabel.Size = new System.Drawing.Size(57, 13);
             this.childrenLabel.TabIndex = 8;
             this.childrenLabel.Text = "Children:";
             // 
+            // itemLabel
+            // 
+            this.itemLabel.AutoSize = true;
+            this.itemLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemLabel.Location = new System.Drawing.Point(286, 80);
+            this.itemLabel.Name = "itemLabel";
+            this.itemLabel.Size = new System.Drawing.Size(35, 13);
+            this.itemLabel.TabIndex = 9;
+            this.itemLabel.Text = "Item:";
+            // 
+            // partNumberLabel
+            // 
+            this.partNumberLabel.AutoSize = true;
+            this.partNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partNumberLabel.Location = new System.Drawing.Point(240, 100);
+            this.partNumberLabel.Name = "partNumberLabel";
+            this.partNumberLabel.Size = new System.Drawing.Size(81, 13);
+            this.partNumberLabel.TabIndex = 10;
+            this.partNumberLabel.Text = "Part Number:";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(285, 120);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(36, 13);
+            this.titleLabel.TabIndex = 11;
+            this.titleLabel.Text = "Title:";
+            // 
+            // materialLabel
+            // 
+            this.materialLabel.AutoSize = true;
+            this.materialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel.Location = new System.Drawing.Point(265, 140);
+            this.materialLabel.Name = "materialLabel";
+            this.materialLabel.Size = new System.Drawing.Size(56, 13);
+            this.materialLabel.TabIndex = 12;
+            this.materialLabel.Text = "Material:";
+            // 
+            // parentLabel
+            // 
+            this.parentLabel.AutoSize = true;
+            this.parentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parentLabel.Location = new System.Drawing.Point(273, 160);
+            this.parentLabel.Name = "parentLabel";
+            this.parentLabel.Size = new System.Drawing.Size(48, 13);
+            this.parentLabel.TabIndex = 13;
+            this.parentLabel.Text = "Parent:";
+            // 
+            // itemDisplay
+            // 
+            this.itemDisplay.AutoSize = true;
+            this.itemDisplay.Location = new System.Drawing.Point(320, 80);
+            this.itemDisplay.Name = "itemDisplay";
+            this.itemDisplay.Size = new System.Drawing.Size(70, 13);
+            this.itemDisplay.TabIndex = 14;
+            this.itemDisplay.Text = "[Item Display]";
+            // 
+            // partNumberDisplay
+            // 
+            this.partNumberDisplay.AutoSize = true;
+            this.partNumberDisplay.Location = new System.Drawing.Point(320, 100);
+            this.partNumberDisplay.Name = "partNumberDisplay";
+            this.partNumberDisplay.Size = new System.Drawing.Size(109, 13);
+            this.partNumberDisplay.TabIndex = 15;
+            this.partNumberDisplay.Text = "[Part Number Display]";
+            // 
+            // titleDisplay
+            // 
+            this.titleDisplay.AutoSize = true;
+            this.titleDisplay.Location = new System.Drawing.Point(320, 120);
+            this.titleDisplay.Name = "titleDisplay";
+            this.titleDisplay.Size = new System.Drawing.Size(70, 13);
+            this.titleDisplay.TabIndex = 16;
+            this.titleDisplay.Text = "[Title Display]";
+            // 
+            // materialDisplay
+            // 
+            this.materialDisplay.AutoSize = true;
+            this.materialDisplay.Location = new System.Drawing.Point(320, 140);
+            this.materialDisplay.Name = "materialDisplay";
+            this.materialDisplay.Size = new System.Drawing.Size(87, 13);
+            this.materialDisplay.TabIndex = 17;
+            this.materialDisplay.Text = "[Material Display]";
+            // 
+            // parentDisplay
+            // 
+            this.parentDisplay.AutoSize = true;
+            this.parentDisplay.Location = new System.Drawing.Point(320, 160);
+            this.parentDisplay.Name = "parentDisplay";
+            this.parentDisplay.Size = new System.Drawing.Size(81, 13);
+            this.parentDisplay.TabIndex = 18;
+            this.parentDisplay.Text = "[Parent Display]";
+            // 
             // BomDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.parentDisplay);
+            this.Controls.Add(this.materialDisplay);
+            this.Controls.Add(this.titleDisplay);
+            this.Controls.Add(this.partNumberDisplay);
+            this.Controls.Add(this.itemDisplay);
+            this.Controls.Add(this.parentLabel);
+            this.Controls.Add(this.materialLabel);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.partNumberLabel);
+            this.Controls.Add(this.itemLabel);
             this.Controls.Add(this.childrenLabel);
             this.Controls.Add(this.childrenTable);
             this.Controls.Add(this.typeDisplay);
@@ -162,6 +277,16 @@ namespace BomTreeView
         private System.Windows.Forms.Label typeDisplay;
         private System.Windows.Forms.DataGridView childrenTable;
         private System.Windows.Forms.Label childrenLabel;
+        private System.Windows.Forms.Label itemLabel;
+        private System.Windows.Forms.Label partNumberLabel;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label materialLabel;
+        private System.Windows.Forms.Label parentLabel;
+        private System.Windows.Forms.Label itemDisplay;
+        private System.Windows.Forms.Label partNumberDisplay;
+        private System.Windows.Forms.Label titleDisplay;
+        private System.Windows.Forms.Label materialDisplay;
+        private System.Windows.Forms.Label parentDisplay;
     }
 }
 

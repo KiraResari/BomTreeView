@@ -48,6 +48,11 @@ namespace BomTreeView
                 = bomEntryRepository.GetBomEntryByComponentName(componentName);
             this.quantityDisplay.Text = selectedBomEntry.Quantity.ToString();
             this.typeDisplay.Text = selectedBomEntry.Type;
+            this.itemDisplay.Text = selectedBomEntry.Item;
+            this.partNumberDisplay.Text = selectedBomEntry.PartNumber;
+            this.titleDisplay.Text = selectedBomEntry.Title;
+            this.materialDisplay.Text = selectedBomEntry.Material;
+            this.parentDisplay.Text = selectedBomEntry.ParentName;
             DisplayChildrenInTableView(selectedBomEntry);
         }
 
