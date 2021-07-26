@@ -1,0 +1,9 @@
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.csproj.AssemblyReference.cache
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.Properties.Resources.resources
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.csproj.GenerateResource.cache
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.csproj.CoreCompileInputs.cache
+E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.exe.config
+E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.exe
+E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.pdb
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.exe
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.pdb
