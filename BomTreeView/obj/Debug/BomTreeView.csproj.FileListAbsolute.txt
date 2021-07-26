@@ -7,3 +7,4 @@ E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.exe
 E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.pdb
 E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.exe
 E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.pdb
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.BomDisplayer.resources

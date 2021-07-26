@@ -34,8 +34,56 @@
 ## 26-Jul-2021
 
 * Now continuing with this
+
 * Last time I created a test view for displaying a TreeView and a TableView that is structurally more or less identical to the UI requested in the project - at least from a UI perspective
+
 * Now, I'll start with the actual project
+
+* Because it's so similar and the above test project is effectively free of dead weight, I'll start by copying over the test project and then making adjustments as necessary
+  * Visual Studio did not make this easy, but I managed to do it after all
+  
+* So, the first thing I now want to do is to change the Game Character sample data structure into one that can hold the BOM
+
+* So for that, I'll first analyze the `bom.csv` and `part.csv` files to get an idea of which fields this data structure will need
+  * The `bom.csv` is effectively defining the tree view. All it contains are parent-child relationships with specifications of how many of a child exist within a parent
+    * The `VALVE` is implicitly defined as the top-level element since it has no parent
+    * Apart from that, one interesting property to import from this file would be the `QUANTITY`
+    
+  * The `part.csv` effectively contains all the remaining information for all of the parts, namely:
+  
+    * NAME (this is the equivalent of the COMPONENT_NAME column in the `bom.csv`)
+    * TYPE
+    * ITEM
+    * PART_NUMBER
+    * TITLE
+    * MATERIAL
+  
+  * As such, I think the `BomEntry`-class (how I'm probably going to call it) should hold these fields:
+  
+    * ````
+      string ComponentName
+      string ParentName
+      int Quantity
+      string Type
+      string Item
+      string PartNumber
+      string Title
+      string Material
+      List<BomEntry> Children
+      ````
+  
+    * Optionally, the Type might be implemented as an Enum, and I could probably also add an `BomEntry Parent` link, but I currently don't see the effective use of these things, so I'll just keep it in mind for later
+  
+* Next, I'll re-create the data structure and use dummy-data to make sure it is displayed correctly
+
+  * According to the `QBuild Developer Programming Challenge.docx`, the Children-Table should display the following columns:
+    * COMPONENT_NAME
+    * PART_NUMBER
+    * TITLE
+    * QUANTITY
+    * TYPE
+    * ITEM
+    * MATERIAL
 
 
 

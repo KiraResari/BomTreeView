@@ -16,7 +16,7 @@ namespace BomTreeView
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CharacterDisplayer());
+            Application.Run(new BomDisplayer());
         }
     }
 }

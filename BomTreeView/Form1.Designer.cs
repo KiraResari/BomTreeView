@@ -1,7 +1,7 @@
 ﻿
 namespace BomTreeView
 {
-    partial class CharacterDisplayer
+    partial class BomDisplayer
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -30,12 +30,12 @@ namespace BomTreeView
         private void InitializeComponent()
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.characterNameDisplay = new System.Windows.Forms.Label();
-            this.characterNameLabel = new System.Windows.Forms.Label();
-            this.speciesDisplay = new System.Windows.Forms.Label();
-            this.weaponLabel = new System.Windows.Forms.Label();
-            this.speciesLabel = new System.Windows.Forms.Label();
-            this.weaponDisplay = new System.Windows.Forms.Label();
+            this.componentNameDisplay = new System.Windows.Forms.Label();
+            this.componentNameLabel = new System.Windows.Forms.Label();
+            this.quantityDisplay = new System.Windows.Forms.Label();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.typeDisplay = new System.Windows.Forms.Label();
             this.childrenTable = new System.Windows.Forms.DataGridView();
             this.childrenLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
@@ -50,63 +50,63 @@ namespace BomTreeView
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseDoubleClick);
             // 
-            // characterNameDisplay
+            // componentNameDisplay
             // 
-            this.characterNameDisplay.AutoSize = true;
-            this.characterNameDisplay.Location = new System.Drawing.Point(320, 20);
-            this.characterNameDisplay.Name = "characterNameDisplay";
-            this.characterNameDisplay.Size = new System.Drawing.Size(127, 13);
-            this.characterNameDisplay.TabIndex = 1;
-            this.characterNameDisplay.Text = "[Character Name Display]";
+            this.componentNameDisplay.AutoSize = true;
+            this.componentNameDisplay.Location = new System.Drawing.Point(320, 20);
+            this.componentNameDisplay.Name = "componentNameDisplay";
+            this.componentNameDisplay.Size = new System.Drawing.Size(135, 13);
+            this.componentNameDisplay.TabIndex = 1;
+            this.componentNameDisplay.Text = "[Component Name Display]";
             // 
-            // characterNameLabel
+            // componentNameLabel
             // 
-            this.characterNameLabel.AutoSize = true;
-            this.characterNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.characterNameLabel.Location = new System.Drawing.Point(220, 20);
-            this.characterNameLabel.Name = "characterNameLabel";
-            this.characterNameLabel.Size = new System.Drawing.Size(102, 13);
-            this.characterNameLabel.TabIndex = 2;
-            this.characterNameLabel.Text = "Character Name:";
+            this.componentNameLabel.AutoSize = true;
+            this.componentNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentNameLabel.Location = new System.Drawing.Point(211, 20);
+            this.componentNameLabel.Name = "componentNameLabel";
+            this.componentNameLabel.Size = new System.Drawing.Size(110, 13);
+            this.componentNameLabel.TabIndex = 2;
+            this.componentNameLabel.Text = "Component Name:";
             // 
-            // speciesDisplay
+            // quantityDisplay
             // 
-            this.speciesDisplay.AutoSize = true;
-            this.speciesDisplay.Location = new System.Drawing.Point(320, 40);
-            this.speciesDisplay.Name = "speciesDisplay";
-            this.speciesDisplay.Size = new System.Drawing.Size(88, 13);
-            this.speciesDisplay.TabIndex = 5;
-            this.speciesDisplay.Text = "[Species Display]";
+            this.quantityDisplay.AutoSize = true;
+            this.quantityDisplay.Location = new System.Drawing.Point(320, 40);
+            this.quantityDisplay.Name = "quantityDisplay";
+            this.quantityDisplay.Size = new System.Drawing.Size(89, 13);
+            this.quantityDisplay.TabIndex = 5;
+            this.quantityDisplay.Text = "[Quantity Display]";
             // 
-            // weaponLabel
+            // typeLabel
             // 
-            this.weaponLabel.AutoSize = true;
-            this.weaponLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weaponLabel.Location = new System.Drawing.Point(264, 60);
-            this.weaponLabel.Name = "weaponLabel";
-            this.weaponLabel.Size = new System.Drawing.Size(58, 13);
-            this.weaponLabel.TabIndex = 4;
-            this.weaponLabel.Text = "Weapon:";
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeLabel.Location = new System.Drawing.Point(275, 60);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(39, 13);
+            this.typeLabel.TabIndex = 4;
+            this.typeLabel.Text = "Type:";
             // 
-            // speciesLabel
+            // quantityLabel
             // 
-            this.speciesLabel.AutoSize = true;
-            this.speciesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speciesLabel.Location = new System.Drawing.Point(266, 40);
-            this.speciesLabel.Name = "speciesLabel";
-            this.speciesLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.speciesLabel.Size = new System.Drawing.Size(56, 13);
-            this.speciesLabel.TabIndex = 3;
-            this.speciesLabel.Text = "Species:";
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityLabel.Location = new System.Drawing.Point(263, 40);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.quantityLabel.Size = new System.Drawing.Size(58, 13);
+            this.quantityLabel.TabIndex = 3;
+            this.quantityLabel.Text = "Quantity:";
             // 
-            // weaponDisplay
+            // typeDisplay
             // 
-            this.weaponDisplay.AutoSize = true;
-            this.weaponDisplay.Location = new System.Drawing.Point(320, 60);
-            this.weaponDisplay.Name = "weaponDisplay";
-            this.weaponDisplay.Size = new System.Drawing.Size(88, 13);
-            this.weaponDisplay.TabIndex = 6;
-            this.weaponDisplay.Text = "[Species Display]";
+            this.typeDisplay.AutoSize = true;
+            this.typeDisplay.Location = new System.Drawing.Point(320, 60);
+            this.typeDisplay.Name = "typeDisplay";
+            this.typeDisplay.Size = new System.Drawing.Size(74, 13);
+            this.typeDisplay.TabIndex = 6;
+            this.typeDisplay.Text = "[Type Display]";
             // 
             // childrenTable
             // 
@@ -127,24 +127,23 @@ namespace BomTreeView
             this.childrenLabel.Size = new System.Drawing.Size(57, 13);
             this.childrenLabel.TabIndex = 8;
             this.childrenLabel.Text = "Children:";
-            this.childrenLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CharacterDisplayer
+            // BomDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.childrenLabel);
             this.Controls.Add(this.childrenTable);
-            this.Controls.Add(this.weaponDisplay);
-            this.Controls.Add(this.speciesDisplay);
-            this.Controls.Add(this.weaponLabel);
-            this.Controls.Add(this.speciesLabel);
-            this.Controls.Add(this.characterNameLabel);
-            this.Controls.Add(this.characterNameDisplay);
+            this.Controls.Add(this.typeDisplay);
+            this.Controls.Add(this.quantityDisplay);
+            this.Controls.Add(this.typeLabel);
+            this.Controls.Add(this.quantityLabel);
+            this.Controls.Add(this.componentNameLabel);
+            this.Controls.Add(this.componentNameDisplay);
             this.Controls.Add(this.treeView1);
-            this.Name = "CharacterDisplayer";
-            this.Text = "Character Displayer";
+            this.Name = "BomDisplayer";
+            this.Text = "BOM Displayer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).EndInit();
             this.ResumeLayout(false);
@@ -155,12 +154,12 @@ namespace BomTreeView
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Label characterNameDisplay;
-        private System.Windows.Forms.Label characterNameLabel;
-        private System.Windows.Forms.Label speciesDisplay;
-        private System.Windows.Forms.Label weaponLabel;
-        private System.Windows.Forms.Label speciesLabel;
-        private System.Windows.Forms.Label weaponDisplay;
+        private System.Windows.Forms.Label componentNameDisplay;
+        private System.Windows.Forms.Label componentNameLabel;
+        private System.Windows.Forms.Label quantityDisplay;
+        private System.Windows.Forms.Label typeLabel;
+        private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.Label typeDisplay;
         private System.Windows.Forms.DataGridView childrenTable;
         private System.Windows.Forms.Label childrenLabel;
     }

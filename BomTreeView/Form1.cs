@@ -10,26 +10,25 @@ using System.Windows.Forms;
 
 namespace BomTreeView
 {
-    public partial class CharacterDisplayer : Form
+    public partial class BomDisplayer : Form
     {
-        public CharacterDisplayer()
+        private BomEntryRepository bomEntryRepository;
+
+        public BomDisplayer()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            foreach(
-                GameCharacter gameCharacter in GameCharacterRepository.sampleGameCharacters
+            bomEntryRepository = BomEntryRepository.BuildDummyBomEntryRepository();
+            List<BomEntry> bomEntryList = bomEntryRepository.BomEntryList;
+            foreach (
+                BomEntry bomEntry in bomEntryList
             )
             {
-                AddNodeForGameCharacter(gameCharacter);
+                treeView1.Nodes.Add(bomEntry.ToTreeNode());
             }
-        }
-
-        private void AddNodeForGameCharacter(GameCharacter gameCharacter)
-        {
-            treeView1.Nodes.Add(gameCharacter.ToTreeNode());
         }
 
         private void TreeView1_NodeMouseDoubleClick(object sender, MouseEventArgs e)
@@ -43,30 +42,25 @@ namespace BomTreeView
         private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode selectedNode = treeView1.SelectedNode;
-            string characterName = selectedNode.Text;
-            this.characterNameDisplay.Text = characterName;
-            GameCharacter selectedCharacter
-                = GameCharacterRepository.GetCharacterByName(characterName);
-            this.speciesDisplay.Text = selectedCharacter.Species;
-            this.weaponDisplay.Text = selectedCharacter.Weapon;
-            DisplayChildrenInTableView(selectedCharacter);
+            string componentName = selectedNode.Text;
+            this.componentNameDisplay.Text = componentName;
+            BomEntry selectedBomEntry 
+                = bomEntryRepository.GetBomEntryByComponentName(componentName);
+            this.quantityDisplay.Text = selectedBomEntry.Quantity.ToString();
+            this.typeDisplay.Text = selectedBomEntry.Type;
+            DisplayChildrenInTableView(selectedBomEntry);
         }
 
-        private void DisplayChildrenInTableView(GameCharacter selectedCharacter)
+        private void DisplayChildrenInTableView(BomEntry selectedBomEntry)
         {
-            if (selectedCharacter.HasChildren())
+            if (selectedBomEntry.HasChildren())
             {
-                childrenTable.DataSource = selectedCharacter.GetChildrenTable();
+                childrenTable.DataSource = selectedBomEntry.GetChildrenTable();
             }
             else
             {
                 childrenTable.DataSource = null;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
