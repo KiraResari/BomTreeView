@@ -8,11 +8,11 @@ namespace BomTreeView.Importer.Bom
 {
     class BomImportResult
     {
-        public List<BomBaseEntry> ImportedBomBaseEntryList { get; set; }
+        public List<BomImportEntry> ImportedBomBaseEntryList { get; set; }
 
-        public BomImportResult(IEnumerable<BomBaseEntry> importedBomBaseEntries)
+        public BomImportResult(IEnumerable<BomImportEntry> importedBomBaseEntries)
         {
-            ImportedBomBaseEntryList = new List<BomBaseEntry>(importedBomBaseEntries);
+            ImportedBomBaseEntryList = new List<BomImportEntry>(importedBomBaseEntries);
         }
     }
 }

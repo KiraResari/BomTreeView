@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BomTreeView.Importer.Part
 {
-    class PartEntry
+    class PartImportEntry
     {
         public string Name { get; set; }
         public string Type { get; set; }
@@ -15,7 +15,7 @@ namespace BomTreeView.Importer.Part
         public string Title { get; set; }
         public string Material { get; set; }
 
-        public PartEntry(string name, string type, string item, string partNumber, string title, string material)
+        public PartImportEntry(string name, string type, string item, string partNumber, string title, string material)
         {
             this.Name = name;
             this.Type = type;

@@ -8,11 +8,11 @@ namespace BomTreeView.Importer.Part
 {
     class PartImportResult
     {
-        public List<PartEntry> ImportedPartEntryList { get; set; }
+        public List<PartImportEntry> ImportedPartEntryList { get; set; }
 
-        public PartImportResult(IEnumerable<PartEntry> importedPartEntries)
+        public PartImportResult(IEnumerable<PartImportEntry> importedPartEntries)
         {
-            ImportedPartEntryList = new List<PartEntry>(importedPartEntries);
+            ImportedPartEntryList = new List<PartImportEntry>(importedPartEntries);
         }
     }
 }

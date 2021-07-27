@@ -16,8 +16,8 @@ namespace BomTreeView.Importer.Bom
             StreamReader streamReader = File.OpenText(bomFileName);
             CsvReader csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
 
-            IEnumerable<BomBaseEntry> importedBomBaseEntries
-                = csvReader.GetRecords<BomBaseEntry>();
+            IEnumerable<BomImportEntry> importedBomBaseEntries
+                = csvReader.GetRecords<BomImportEntry>();
             return new BomImportResult(importedBomBaseEntries);
         }
     }
