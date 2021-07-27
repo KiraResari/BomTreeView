@@ -202,7 +202,16 @@
 
 * With that, I should now have everything in place to allow the import via button
 
-* 
+* I now got the import to work per se, but there's still a problem
+
+  * I haven't figured out how to make it so that the files are automatically put into the debug/bin folder, or whatever folder the project is exported to, so I had to hard-code the file paths
+  * I'll have to tackle that next time
+
+* This is as far as I'm getting today
+
+* Elapsed time today: ~4 hours
+
+* Total elapsed time: ~10 hours
 
 
 
