@@ -81,6 +81,7 @@
       <DependentUpon>BomDisplayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Display\BomDisplayEntry.cs" />
+    <Compile Include="Importer\BomAndPartImporter.cs" />
     <Compile Include="Importer\Bom\BomImportEntry.cs" />
     <Compile Include="Importer\Bom\BomImporter.cs" />
     <Compile Include="Importer\Bom\BomImportResult.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -112,6 +114,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\bom.csv" />
+    <None Include="Resources\part.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

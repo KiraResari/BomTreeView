@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BomTreeView.Database;
+using BomTreeView.Importer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace BomTreeView
     public partial class BomDisplayer : Form
     {
         private BomDisplayEntryList bomDisplayEntryList;
+        private const string SAMPLE_BOM_FILE_PATH = "E:/projects/BomTreeView/bom.csv";
+        private const string SAMPLE_PART_FILE_PATH = "E:/projects/BomTreeView/part.csv";
 
         public BomDisplayer()
         {
@@ -22,6 +26,12 @@ namespace BomTreeView
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
             bomDisplayEntryList = BomDisplayEntryList.BuildDummyBomEntryRepository();
+            RebuildTreeView();
+        }
+
+        private void RebuildTreeView()
+        {
+            bomTreeView.Nodes.Clear();
             List<BomDisplayEntry> bomEntryList = bomDisplayEntryList.BomEntryList;
             foreach (
                 BomDisplayEntry bomEntry in bomEntryList
@@ -71,6 +81,18 @@ namespace BomTreeView
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ImportBomDataButton_Click(object sender, EventArgs e)
+        {
+            BomAndPartImporter bomAndPartImporter = new BomAndPartImporter();
+            BomDbEntryList bomDbEntryList = bomAndPartImporter.ImportBom(
+                SAMPLE_BOM_FILE_PATH,
+                SAMPLE_PART_FILE_PATH
+            );
+            bomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
+            RebuildTreeView();
+            importBomDataButton.Enabled = false;
         }
     }
 }

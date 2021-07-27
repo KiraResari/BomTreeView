@@ -8,9 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace BomTreeView.Properties
-{
+namespace BomTreeView.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -18,52 +19,96 @@ namespace BomTreeView.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BomTreeView.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PARENT_NAME,QUANTITY,COMPONENT_NAME
+        ///VALVE,1,BODY
+        ///VALVE,1,ORIFICE_GASKET
+        ///VALVE,1,ORIFICE
+        ///VALVE,1,DISC
+        ///VALVE,1,GUIDE_SET
+        ///VALVE,1,STEM
+        ///VALVE,1,COV_FLG
+        ///VALVE,1,FOLLOW_FLG
+        ///VALVE,1,SBP_PIPEPLUG
+        ///VALVE,1,SBS_PIPEPLUG
+        ///VALVE,1,NAMEPLATE
+        ///VALVE,4,DRIVESCREW
+        ///VALVE,2,NULL_LIPSEAL
+        ///VALVE,2,PACKING_F4
+        ///VALVE,6,PACKING_F3
+        ///VALVE,1,SLEEVE
+        ///VALVE,4,PACKING_F2
+        ///VALVE,1,LANT_RING
+        ///VALVE,1,SEP_RING
+        ///VALVE,1,PKG_GLAND
+        ///VALVE,2,BOLT_GASKET
+        ///VALVE,2,BOLT_X5
+        ///VALVE,2,BOLT_N13
+        ///VALVE,2,NUT_N14
+        ///VALVE,32,SPRING_WASH
+        ///VALV [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string bom {
+            get {
+                return ResourceManager.GetString("bom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NAME,TYPE,ITEM,PART_NUMBER,TITLE,MATERIAL
+        ///VALVE,ASSEMBLY,?,00001-254878,VALVE ASSEMBLY,?
+        ///BODY,ASSEMBLY,A,09200-254878,BODY ASSEMBLY,SA-516-GR.70N
+        ///BONNET,ASSEMBLY,A3 ,09262-254878,BONNET ASSEMBLY,SA-516-GR.70N
+        ///SEAT,ASSEMBLY,A2 ,09237-254878,SEAT ASSEMBLY,SA-387-GR.11 CL.1 N&amp;T
+        ///BON_RET_ASSY,ASSEMBLY,A4 ,04305-254878,BONNET RETAINER ASSEMBLY,SA-240-410S
+        ///ORIFICE,ASSEMBLY,B,09501-254878,ORIFICE PLATE ASSEMBLY,SA-387-GR.11 CL.1 N&amp;T
+        ///DISC,ASSEMBLY,D,09000-254878,DISC ASSEMBLY,SA-387-GR.11 CL.1 N&amp;T
+        ///GUIDE_SET, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string part {
+            get {
+                return ResourceManager.GetString("part", resourceCulture);
             }
         }
     }

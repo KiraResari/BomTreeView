@@ -50,6 +50,7 @@ namespace BomTreeView
             this.parentDisplay = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.componentOverviewLabel = new System.Windows.Forms.Label();
+            this.importBomDataButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -255,11 +256,22 @@ namespace BomTreeView
             this.componentOverviewLabel.TabIndex = 20;
             this.componentOverviewLabel.Text = "Component Overview";
             // 
+            // importBomDataButton
+            // 
+            this.importBomDataButton.Location = new System.Drawing.Point(891, 15);
+            this.importBomDataButton.Name = "importBomDataButton";
+            this.importBomDataButton.Size = new System.Drawing.Size(176, 23);
+            this.importBomDataButton.TabIndex = 21;
+            this.importBomDataButton.Text = "Import BOM Data";
+            this.importBomDataButton.UseVisualStyleBackColor = true;
+            this.importBomDataButton.Click += new System.EventHandler(this.ImportBomDataButton_Click);
+            // 
             // BomDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.importBomDataButton);
             this.Controls.Add(this.componentOverviewLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.parentDisplay);
@@ -313,6 +325,7 @@ namespace BomTreeView
         private System.Windows.Forms.Label parentDisplay;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label componentOverviewLabel;
+        private System.Windows.Forms.Button importBomDataButton;
     }
 }
 
