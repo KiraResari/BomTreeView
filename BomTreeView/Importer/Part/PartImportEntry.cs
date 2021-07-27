@@ -10,17 +10,16 @@ namespace BomTreeView.Importer.Part
     public class PartImportEntry
     {
         [Name("NAME")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         [Name("TYPE")]
-        public string Type { get; set; }
+        public string Type { get; set; } = "";
         [Name("ITEM")]
-        public string Item { get; set; }
+        public string Item { get; set; } = "";
         [Name("PART_NUMBER")]
-        public string PartNumber { get; set; }
+        public string PartNumber { get; set; } = "";
         [Name("TITLE")]
-        public string Title { get; set; }
+        public string Title { get; set; } = "";
         [Name("MATERIAL")]
-        public string Material { get; set; }
-
+        public string Material { get; set; } = "";
     }
 }

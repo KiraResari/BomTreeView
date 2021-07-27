@@ -178,9 +178,23 @@
 
   * Now it still complains that it can't find the sadCamelCaseHeaders, which I'm going to interpret as "the Import Entries shouldn't have constructors"
 
-  * **SUCCESS!** Now the test passes!
+  * **SUCCESS!** Now the `BomImporterTest` passes!
 
-  * 
+  * Now I'll just write an equivalent `PartImporterTest`
+
+    * I now did that and got it to pass too
+
+* Now that I know that the individual importers work as intended, I can next work on combining the two imported data sets into one
+
+  * There, I should keep in mind that the resulting data object should be SQL-Friendly, meaning I can't directly pass around Object references like I currently do in the 
+  * I now did that, but in testing the importer I found a discrepancy between the two files
+    * The `bom.csv` specifies in Line 45 that the `BODY` should have a child component with the name `WELD_TOPCONE2SPOOL`
+    * However, the `part.csv` does not specify such a part with such a name
+    * I suppose that is where this part in the Specification comes in:
+      * "Most of the COMPONENT_NAME data crosses over to a record in the PART file with NAME= COMPONENT_NAME. If there is no record in the PART file, you can leave the fields blank."
+    * I now adjusted the logic accordingly, and now the test passes
+
+* 
 
 
 

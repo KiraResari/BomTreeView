@@ -16,5 +16,22 @@ namespace BomTreeView.Importer.Bom
         [Name("COMPONENT_NAME")]
         public string ComponentName { get; set; }
 
+        public bool HasParent()
+        {
+            if(ParentName == null)
+            {
+                return false;
+            }
+            return !(ParentName == "");
+        }
+
+        internal bool IsChildOf(BomImportEntry bomNode)
+        {
+            if (!HasParent())
+            {
+                return false;
+            }
+            return ParentName == bomNode.ComponentName;
+        }
     }
 }

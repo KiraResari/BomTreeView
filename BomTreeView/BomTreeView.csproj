@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\BomDbEntry.cs" />
+    <Compile Include="Database\BomDbEntryList.cs" />
     <Compile Include="Display\BomDisplayEntryRepository.cs" />
     <Compile Include="BomDisplayer.cs">
       <SubType>Form</SubType>
@@ -82,6 +84,7 @@
     <Compile Include="Importer\Bom\BomImportEntry.cs" />
     <Compile Include="Importer\Bom\BomImporter.cs" />
     <Compile Include="Importer\Bom\BomImportResult.cs" />
+    <Compile Include="Importer\Combiner\BomAndPartCombiner.cs" />
     <Compile Include="Importer\Part\PartImporter.cs" />
     <Compile Include="Importer\Part\PartImportEntry.cs" />
     <Compile Include="Importer\Part\PartImportResult.cs" />

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Importer\Bom\BomImporterTest.cs" />
+    <Compile Include="Importer\Combiner\BomAndPartCombinerTest.cs" />
     <Compile Include="Importer\Part\PartImporterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
