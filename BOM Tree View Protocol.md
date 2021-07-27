@@ -198,6 +198,12 @@
 
 * The next step will be translating that `BomDbEntryList` into a `BomDisplayEntryList` that I can then use as data source for the `BomDisplayer`
 
+  * I now did that, complete with tests
+
+* With that, I should now have everything in place to allow the import via button
+
+* 
+
 
 
 # ⚓
