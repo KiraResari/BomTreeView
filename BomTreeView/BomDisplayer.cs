@@ -12,7 +12,7 @@ namespace BomTreeView
 {
     public partial class BomDisplayer : Form
     {
-        private BomDisplayEntryRepository bomEntryRepository;
+        private BomDisplayEntryList bomDisplayEntryList;
 
         public BomDisplayer()
         {
@@ -21,8 +21,8 @@ namespace BomTreeView
 
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
-            bomEntryRepository = BomDisplayEntryRepository.BuildDummyBomEntryRepository();
-            List<BomDisplayEntry> bomEntryList = bomEntryRepository.BomEntryList;
+            bomDisplayEntryList = BomDisplayEntryList.BuildDummyBomEntryRepository();
+            List<BomDisplayEntry> bomEntryList = bomDisplayEntryList.BomEntryList;
             foreach (
                 BomDisplayEntry bomEntry in bomEntryList
             )
@@ -45,7 +45,7 @@ namespace BomTreeView
             string componentName = selectedNode.Text;
             this.componentNameDisplay.Text = componentName;
             BomDisplayEntry selectedBomEntry 
-                = bomEntryRepository.GetBomEntryByComponentName(componentName);
+                = bomDisplayEntryList.GetBomEntryByComponentName(componentName);
             this.quantityDisplay.Text = selectedBomEntry.Quantity.ToString();
             this.typeDisplay.Text = selectedBomEntry.Type;
             this.itemDisplay.Text = selectedBomEntry.Item;

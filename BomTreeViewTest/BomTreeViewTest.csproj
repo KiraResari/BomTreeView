@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\BomDbEntryListTest.cs" />
     <Compile Include="Importer\Bom\BomImporterTest.cs" />
     <Compile Include="Importer\Combiner\BomAndPartCombinerTest.cs" />
     <Compile Include="Importer\Part\PartImporterTest.cs" />

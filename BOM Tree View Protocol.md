@@ -194,7 +194,9 @@
       * "Most of the COMPONENT_NAME data crosses over to a record in the PART file with NAME= COMPONENT_NAME. If there is no record in the PART file, you can leave the fields blank."
     * I now adjusted the logic accordingly, and now the test passes
 
-* 
+* So, now I have a tested working import infrastructure that generates me a DB-Friendly `BomDbEntryList`
+
+* The next step will be translating that `BomDbEntryList` into a `BomDisplayEntryList` that I can then use as data source for the `BomDisplayer`
 
 
 

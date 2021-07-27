@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace BomTreeView
 {
-    public class BomDisplayEntryRepository
+    public class BomDisplayEntryList
     {
         public List<BomDisplayEntry> BomEntryList { get; set; }
 
-        public BomDisplayEntryRepository(List<BomDisplayEntry> bomEntryList)
+        public BomDisplayEntryList(List<BomDisplayEntry> bomEntryList)
         {
             this.BomEntryList = bomEntryList;
+        }
+
+        public BomDisplayEntryList(BomDisplayEntry bomDisplayEntry)
+        {
+            BomEntryList = new List<BomDisplayEntry>() { bomDisplayEntry };
         }
 
         public BomDisplayEntry GetBomEntryByComponentName(string componentName)
@@ -28,7 +33,7 @@ namespace BomTreeView
             throw new Exception("Could not find component with name: " + componentName);
         }
 
-        private List<BomDisplayEntry> GetFlattenedBomEntryList()
+        public List<BomDisplayEntry> GetFlattenedBomEntryList()
         {
             List<BomDisplayEntry> flattenedBomEntryList = new List<BomDisplayEntry>();
             foreach (BomDisplayEntry bomEntry in BomEntryList)
@@ -39,7 +44,7 @@ namespace BomTreeView
             return flattenedBomEntryList;
         }
 
-        public static BomDisplayEntryRepository BuildDummyBomEntryRepository()
+        public static BomDisplayEntryList BuildDummyBomEntryRepository()
         {
             BomDisplayEntry body_spool
                 = new BomDisplayEntry("BODY_SPOOL", "BODY", 1, "PART", "A1", "09204-254878", "BODY SPOOL", "SA-516-GR.70N");
@@ -69,7 +74,7 @@ namespace BomTreeView
             BomDisplayEntry valve 
                 = new BomDisplayEntry("VALVE", "", 1, "ASSEMBLY", "?", "00001-254878", "VALVE ASSEMBLY", "?", valveChildren);
             List<BomDisplayEntry> bomEntryList = new List<BomDisplayEntry>() { valve };
-            return new BomDisplayEntryRepository(bomEntryList);
+            return new BomDisplayEntryList(bomEntryList);
         }
     }
 }

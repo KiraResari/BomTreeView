@@ -36,5 +36,23 @@ namespace BomTreeView.Database
             this.Title = title;
             this.Material = material;
         }
+
+        public bool HasParent()
+        {
+            if (ParentName == null)
+            {
+                return false;
+            }
+            return !(ParentName == "");
+        }
+
+        internal bool IsChildOf(BomDbEntry bomDbEntry)
+        {
+            if (!HasParent())
+            {
+                return false;
+            }
+            return ParentName == bomDbEntry.ComponentName;
+        }
     }
 }

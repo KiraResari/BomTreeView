@@ -31,7 +31,6 @@ namespace BomTreeViewTest
             BomDbEntryList bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
-
             List<BomDbEntry> bomDbEntries
                 = bomDbEntryList.BomDbEntries;
             Assert.AreEqual(196, bomDbEntries.Count);
