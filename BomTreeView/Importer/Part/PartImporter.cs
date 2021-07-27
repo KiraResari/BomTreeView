@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BomTreeView.Importer.Part
 {
-    class PartImporter
+    public class PartImporter
     {
         public PartImportResult ImportPartFile(string partFileName)
         {
             StreamReader streamReader = File.OpenText(partFileName);
-            CsvReader csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
+            CsvReader csvReader = new CsvReader(streamReader, new CultureInfo("en-CA"));
 
             IEnumerable<PartImportEntry> importedPartEntries
                 = csvReader.GetRecords<PartImportEntry>();

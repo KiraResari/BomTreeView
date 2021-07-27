@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BomTreeView.Importer.Bom
 {
-    class BomImportResult
+    public class BomImportResult
     {
-        public List<BomImportEntry> ImportedBomBaseEntryList { get; set; }
+        public List<BomImportEntry> ImportedBomEntryList { get; set; }
 
         public BomImportResult(IEnumerable<BomImportEntry> importedBomBaseEntries)
         {
-            ImportedBomBaseEntryList = new List<BomImportEntry>(importedBomBaseEntries);
+            ImportedBomEntryList = new List<BomImportEntry>(importedBomBaseEntries);
         }
     }
 }

@@ -9,12 +9,12 @@ using CsvHelper;
 
 namespace BomTreeView.Importer.Bom
 {
-    class BomImporter
+    public class BomImporter
     {
         public BomImportResult ImportBomFile(string bomFileName)
         {
             StreamReader streamReader = File.OpenText(bomFileName);
-            CsvReader csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
+            CsvReader csvReader = new CsvReader(streamReader, new CultureInfo("en-CA"));
 
             IEnumerable<BomImportEntry> importedBomBaseEntries
                 = csvReader.GetRecords<BomImportEntry>();

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BomTreeView", "BomTreeView\BomTreeView.csproj", "{7133015A-87C7-4EE3-B2D7-AAC9AB8F1E70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BomTreeViewTest", "BomTreeViewTest\BomTreeViewTest.csproj", "{896B26C9-FCDD-45AD-88F9-82D54784384E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7133015A-87C7-4EE3-B2D7-AAC9AB8F1E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7133015A-87C7-4EE3-B2D7-AAC9AB8F1E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7133015A-87C7-4EE3-B2D7-AAC9AB8F1E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896B26C9-FCDD-45AD-88F9-82D54784384E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896B26C9-FCDD-45AD-88F9-82D54784384E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896B26C9-FCDD-45AD-88F9-82D54784384E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896B26C9-FCDD-45AD-88F9-82D54784384E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -127,7 +127,60 @@
 
 # 27-Jul-2021
 
-* 
+* Now continuing with this
+
+* Last time, I prepared the BomImporter and PartImporter, which are supposed to import the `bom.csv` and the `part.csv` into the program, so I can then combine them
+
+* Before I do that, however, I want to test if this import is working the way I expect it to
+
+  * So, how did that work again in C#?
+
+  * This looks like it ought to explain that:
+
+    * https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019
+
+  * I now managed to get the test running, and it turns out it's a good thing I wrote it, because the import of the `bom.csv` currently fails with an error
+
+  * Apparently, the importer looks for headers that either match the field names or the parameter names of the constructor of the object that I want to import, and since in the csv the headers are written in SCREAMING_SNAKE_CASE while the class fields are in HappyCamelCase and the parameter names are in sadCamelCase, no match is found
+
+  * I now managed to fix this by adding attributes for the Header Names (`[Name("PARENT_NAME")]`)
+
+  * However, that didn't fix the problem. It only made it more annoying:
+
+    * ````
+          Test method BomTreeViewTest.BomImporterTest.ImportingBomShouldCreateBomImporterResultWithCorrectNumberOfEntries threw exception: 
+          CsvHelper.HeaderValidationException: Header with name 'parentName'[0] was not found.
+          Header with name 'quantity'[0] was not found.
+          Header with name 'componentName'[0] was not found.
+          Header with name 'PARENT_NAME'[0] was not found.
+          Header with name 'QUANTITY'[0] was not found.
+          Header with name 'COMPONENT_NAME'[0] was not found.
+          If you are expecting some headers to be missing and want to ignore this validation, set the configuration HeaderValidated to null. You can also change the functionality to do something else, like logging the issue.
+         
+      ````
+
+    * ...which right now is simply wrong since the `bom.csv` clearly has those headers:
+
+    * ````
+      PARENT_NAME,QUANTITY,COMPONENT_NAME
+      VALVE,1,BODY
+      ````
+
+  * However, I could imagine that this behavior happens due to a culture shock, since the CSV Importer is opened like this:
+
+    * `CsvReader csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);`
+
+  * ...and I just so happen to know that some programs follow the anti-pattern of separating COMMA SEPARATED VALUES with SEMICOLONS in some countries, and Germany happens to be one of those countries
+
+  * So before I even go to any length of effort to ascertain that this is the problem, I'm just gonna see what happens if I replace the CultureInfo in the CsvReader with the Canadian one
+
+    * As expected, this was EXACTLY the problem
+
+  * Now it still complains that it can't find the sadCamelCaseHeaders, which I'm going to interpret as "the Import Entries shouldn't have constructors"
+
+  * **SUCCESS!** Now the test passes!
+
+  * 
 
 
 

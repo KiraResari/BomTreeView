@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper.Configuration.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,14 @@ using System.Threading.Tasks;
 
 namespace BomTreeView.Importer.Bom
 {
-    class BomImportEntry
+    public class BomImportEntry
     {
+        [Name("PARENT_NAME")]
         public string ParentName { get; set; }
+        [Name("QUANTITY")]
         public int Quantity { get; set; }
+        [Name("COMPONENT_NAME")]
         public string ComponentName { get; set; }
 
-        public BomImportEntry(string parentName, int quantity, string componentName)
-        {
-            this.ParentName = parentName;
-            this.Quantity = quantity;
-            this.ComponentName = componentName;
-        }
     }
 }

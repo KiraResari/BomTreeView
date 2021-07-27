@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BomTreeView
 {
-    class BomEntry
+    public class BomDisplayEntry
     {
         public string ComponentName { get; set; }
         public string ParentName { get; set; }
@@ -18,9 +18,9 @@ namespace BomTreeView
         public string PartNumber { get; set; }
         public string Title { get; set; }
         public string Material { get; set; }
-        private List<BomEntry> Children { get; set; } = new List<BomEntry>();
+        private List<BomDisplayEntry> Children { get; set; } = new List<BomDisplayEntry>();
 
-        public BomEntry(
+        public BomDisplayEntry(
             string componentName,
             string parentName,
             int quantity,
@@ -41,7 +41,7 @@ namespace BomTreeView
         }
 
 
-        public BomEntry(
+        public BomDisplayEntry(
             string componentName,
             string parentName,
             int quantity,
@@ -50,7 +50,7 @@ namespace BomTreeView
             string partNumber,
             string title,
             string material,
-            List<BomEntry> children
+            List<BomDisplayEntry> children
         ) : this(
             componentName,
             parentName,
@@ -85,7 +85,7 @@ namespace BomTreeView
         private TreeNode[] GetChildrenNodes()
         {
             List<TreeNode> childrenNodeList = new List<TreeNode>();
-            foreach (BomEntry childCharacter in Children)
+            foreach (BomDisplayEntry childCharacter in Children)
             {
                 TreeNode childNode = childCharacter.ToTreeNode();
                 childrenNodeList.Add(childNode);
@@ -93,10 +93,10 @@ namespace BomTreeView
             return childrenNodeList.ToArray();
         }
 
-        public List<BomEntry> GetFlattenedChildrenList()
+        public List<BomDisplayEntry> GetFlattenedChildrenList()
         {
-            List<BomEntry> flattenedChildrenList = new List<BomEntry>();
-            foreach(BomEntry bomEntry in Children)
+            List<BomDisplayEntry> flattenedChildrenList = new List<BomDisplayEntry>();
+            foreach(BomDisplayEntry bomEntry in Children)
             {
                 flattenedChildrenList.Add(bomEntry);
                 flattenedChildrenList.AddRange(bomEntry.GetFlattenedChildrenList());
@@ -116,7 +116,7 @@ namespace BomTreeView
             dataTable.Columns.Add("ITEM ", typeof(string));
             dataTable.Columns.Add("MATERIAL", typeof(string));
 
-            foreach (BomEntry child in Children)
+            foreach (BomDisplayEntry child in Children)
             {
                 dataTable.Rows.Add(
                     child.ComponentName,

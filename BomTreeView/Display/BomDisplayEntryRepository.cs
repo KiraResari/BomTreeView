@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BomTreeView
 {
-    class BomEntryRepository
+    public class BomDisplayEntryRepository
     {
-        public List<BomEntry> BomEntryList { get; set; }
+        public List<BomDisplayEntry> BomEntryList { get; set; }
 
-        public BomEntryRepository(List<BomEntry> bomEntryList)
+        public BomDisplayEntryRepository(List<BomDisplayEntry> bomEntryList)
         {
             this.BomEntryList = bomEntryList;
         }
 
-        public BomEntry GetBomEntryByComponentName(string componentName)
+        public BomDisplayEntry GetBomEntryByComponentName(string componentName)
         {
-            List<BomEntry> flattenedBomEntryList = GetFlattenedBomEntryList();
-            foreach (BomEntry bomEntry in flattenedBomEntryList)
+            List<BomDisplayEntry> flattenedBomEntryList = GetFlattenedBomEntryList();
+            foreach (BomDisplayEntry bomEntry in flattenedBomEntryList)
             {
                 if (bomEntry.ComponentName == componentName)
                 {
@@ -28,10 +28,10 @@ namespace BomTreeView
             throw new Exception("Could not find component with name: " + componentName);
         }
 
-        private List<BomEntry> GetFlattenedBomEntryList()
+        private List<BomDisplayEntry> GetFlattenedBomEntryList()
         {
-            List<BomEntry> flattenedBomEntryList = new List<BomEntry>();
-            foreach (BomEntry bomEntry in BomEntryList)
+            List<BomDisplayEntry> flattenedBomEntryList = new List<BomDisplayEntry>();
+            foreach (BomDisplayEntry bomEntry in BomEntryList)
             {
                 flattenedBomEntryList.Add(bomEntry);
                 flattenedBomEntryList.AddRange(bomEntry.GetFlattenedChildrenList());
@@ -39,12 +39,12 @@ namespace BomTreeView
             return flattenedBomEntryList;
         }
 
-        public static BomEntryRepository BuildDummyBomEntryRepository()
+        public static BomDisplayEntryRepository BuildDummyBomEntryRepository()
         {
-            BomEntry body_spool
-                = new BomEntry("BODY_SPOOL", "BODY", 1, "PART", "A1", "09204-254878", "BODY SPOOL", "SA-516-GR.70N");
-            List<BomEntry> bodyChildren = new List<BomEntry>() { body_spool };
-            BomEntry body = new BomEntry(
+            BomDisplayEntry body_spool
+                = new BomDisplayEntry("BODY_SPOOL", "BODY", 1, "PART", "A1", "09204-254878", "BODY SPOOL", "SA-516-GR.70N");
+            List<BomDisplayEntry> bodyChildren = new List<BomDisplayEntry>() { body_spool };
+            BomDisplayEntry body = new BomDisplayEntry(
                 "BODY",
                 "VALVE",
                 1,
@@ -55,7 +55,7 @@ namespace BomTreeView
                 "SA-516-GR.70N",
                 bodyChildren
             );
-            BomEntry orficeGasket = new BomEntry(
+            BomDisplayEntry orficeGasket = new BomDisplayEntry(
                 "ORIFICE_GASKET",
                 "VALVE",
                 1,
@@ -65,11 +65,11 @@ namespace BomTreeView
                 "ORIFICE GASKET, METAL REINFORCED LAMINATE STYLE GHE\"\"",
                 "316SS/GRAFOIL"
             );
-            List<BomEntry> valveChildren = new List<BomEntry>() { body, orficeGasket };
-            BomEntry valve 
-                = new BomEntry("VALVE", "", 1, "ASSEMBLY", "?", "00001-254878", "VALVE ASSEMBLY", "?", valveChildren);
-            List<BomEntry> bomEntryList = new List<BomEntry>() { valve };
-            return new BomEntryRepository(bomEntryList);
+            List<BomDisplayEntry> valveChildren = new List<BomDisplayEntry>() { body, orficeGasket };
+            BomDisplayEntry valve 
+                = new BomDisplayEntry("VALVE", "", 1, "ASSEMBLY", "?", "00001-254878", "VALVE ASSEMBLY", "?", valveChildren);
+            List<BomDisplayEntry> bomEntryList = new List<BomDisplayEntry>() { valve };
+            return new BomDisplayEntryRepository(bomEntryList);
         }
     }
 }
