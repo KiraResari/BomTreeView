@@ -44,36 +44,9 @@ namespace BomTreeView
             return flattenedBomEntryList;
         }
 
-        public static BomDisplayEntryList BuildDummyBomEntryRepository()
+        public static BomDisplayEntryList BuildEmpty()
         {
-            BomDisplayEntry body_spool
-                = new BomDisplayEntry("BODY_SPOOL", "BODY", 1, "PART", "A1", "09204-254878", "BODY SPOOL", "SA-516-GR.70N");
-            List<BomDisplayEntry> bodyChildren = new List<BomDisplayEntry>() { body_spool };
-            BomDisplayEntry body = new BomDisplayEntry(
-                "BODY",
-                "VALVE",
-                1,
-                "ASSEMBLY",
-                "A",
-                "09200-254878", 
-                "BODY ASSEMBLY",
-                "SA-516-GR.70N",
-                bodyChildren
-            );
-            BomDisplayEntry orficeGasket = new BomDisplayEntry(
-                "ORIFICE_GASKET",
-                "VALVE",
-                1,
-                "PART",
-                "M1",
-                "01303-254878",
-                "ORIFICE GASKET, METAL REINFORCED LAMINATE STYLE GHE\"\"",
-                "316SS/GRAFOIL"
-            );
-            List<BomDisplayEntry> valveChildren = new List<BomDisplayEntry>() { body, orficeGasket };
-            BomDisplayEntry valve 
-                = new BomDisplayEntry("VALVE", "", 1, "ASSEMBLY", "?", "00001-254878", "VALVE ASSEMBLY", "?", valveChildren);
-            List<BomDisplayEntry> bomEntryList = new List<BomDisplayEntry>() { valve };
+            List<BomDisplayEntry> bomEntryList = new List<BomDisplayEntry>();
             return new BomDisplayEntryList(bomEntryList);
         }
     }

@@ -224,7 +224,9 @@
   * Of course, in an actual project, there would most likely a file selector for that, and then the absolute paths wouldn't be a problem, but that would create its own whole set of problems and blow the scope of this challenge
   * So resources it is
   * I now figured out how to do this
-  * 
+* Next, and this is a minor thing, I'll make it so that no data is displayed at first, and also remove the hard-coded sample data
+  * I now did that
+* 
 
 
 

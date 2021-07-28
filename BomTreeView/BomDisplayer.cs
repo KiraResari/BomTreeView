@@ -23,7 +23,7 @@ namespace BomTreeView
 
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
-            bomDisplayEntryList = BomDisplayEntryList.BuildDummyBomEntryRepository();
+            bomDisplayEntryList = BomDisplayEntryList.BuildEmpty();
             RebuildTreeView();
         }
 

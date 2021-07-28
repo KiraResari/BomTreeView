@@ -68,9 +68,10 @@ namespace BomTreeView
             this.componentNameDisplay.AutoSize = true;
             this.componentNameDisplay.Location = new System.Drawing.Point(320, 20);
             this.componentNameDisplay.Name = "componentNameDisplay";
-            this.componentNameDisplay.Size = new System.Drawing.Size(135, 13);
+            this.componentNameDisplay.Size = new System.Drawing.Size(559, 13);
             this.componentNameDisplay.TabIndex = 1;
-            this.componentNameDisplay.Text = "[Component Name Display]";
+            this.componentNameDisplay.Text = "                                                                     Please click" +
+    " \"Import BOM Data\" to import the hard-coded sample files --->";
             // 
             // componentNameLabel
             // 
@@ -87,9 +88,8 @@ namespace BomTreeView
             this.quantityDisplay.AutoSize = true;
             this.quantityDisplay.Location = new System.Drawing.Point(320, 40);
             this.quantityDisplay.Name = "quantityDisplay";
-            this.quantityDisplay.Size = new System.Drawing.Size(89, 13);
+            this.quantityDisplay.Size = new System.Drawing.Size(0, 13);
             this.quantityDisplay.TabIndex = 5;
-            this.quantityDisplay.Text = "[Quantity Display]";
             // 
             // typeLabel
             // 
@@ -117,9 +117,8 @@ namespace BomTreeView
             this.typeDisplay.AutoSize = true;
             this.typeDisplay.Location = new System.Drawing.Point(320, 60);
             this.typeDisplay.Name = "typeDisplay";
-            this.typeDisplay.Size = new System.Drawing.Size(74, 13);
+            this.typeDisplay.Size = new System.Drawing.Size(0, 13);
             this.typeDisplay.TabIndex = 6;
-            this.typeDisplay.Text = "[Type Display]";
             // 
             // childrenTable
             // 
@@ -196,45 +195,40 @@ namespace BomTreeView
             this.itemDisplay.AutoSize = true;
             this.itemDisplay.Location = new System.Drawing.Point(320, 80);
             this.itemDisplay.Name = "itemDisplay";
-            this.itemDisplay.Size = new System.Drawing.Size(70, 13);
+            this.itemDisplay.Size = new System.Drawing.Size(0, 13);
             this.itemDisplay.TabIndex = 14;
-            this.itemDisplay.Text = "[Item Display]";
             // 
             // partNumberDisplay
             // 
             this.partNumberDisplay.AutoSize = true;
             this.partNumberDisplay.Location = new System.Drawing.Point(320, 100);
             this.partNumberDisplay.Name = "partNumberDisplay";
-            this.partNumberDisplay.Size = new System.Drawing.Size(109, 13);
+            this.partNumberDisplay.Size = new System.Drawing.Size(0, 13);
             this.partNumberDisplay.TabIndex = 15;
-            this.partNumberDisplay.Text = "[Part Number Display]";
             // 
             // titleDisplay
             // 
             this.titleDisplay.AutoSize = true;
             this.titleDisplay.Location = new System.Drawing.Point(320, 120);
             this.titleDisplay.Name = "titleDisplay";
-            this.titleDisplay.Size = new System.Drawing.Size(70, 13);
+            this.titleDisplay.Size = new System.Drawing.Size(0, 13);
             this.titleDisplay.TabIndex = 16;
-            this.titleDisplay.Text = "[Title Display]";
             // 
             // materialDisplay
             // 
             this.materialDisplay.AutoSize = true;
             this.materialDisplay.Location = new System.Drawing.Point(320, 140);
             this.materialDisplay.Name = "materialDisplay";
-            this.materialDisplay.Size = new System.Drawing.Size(87, 13);
+            this.materialDisplay.Size = new System.Drawing.Size(0, 13);
             this.materialDisplay.TabIndex = 17;
-            this.materialDisplay.Text = "[Material Display]";
             // 
             // parentDisplay
             // 
             this.parentDisplay.AutoSize = true;
             this.parentDisplay.Location = new System.Drawing.Point(320, 160);
             this.parentDisplay.Name = "parentDisplay";
-            this.parentDisplay.Size = new System.Drawing.Size(81, 13);
+            this.parentDisplay.Size = new System.Drawing.Size(0, 13);
             this.parentDisplay.TabIndex = 18;
-            this.parentDisplay.Text = "[Parent Display]";
             // 
             // exitButton
             // 
