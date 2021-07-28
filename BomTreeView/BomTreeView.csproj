@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Database\BomDbEntry.cs" />
     <Compile Include="Database\BomDbEntryList.cs" />
+    <Compile Include="Database\SqlDatabaseController.cs" />
     <Compile Include="Display\BomDisplayEntryList.cs" />
     <Compile Include="BomDisplayer.cs">
       <SubType>Form</SubType>

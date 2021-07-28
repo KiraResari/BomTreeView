@@ -218,15 +218,90 @@
 # 28-Jul-2021
 
 * Now continuing with this
+
 * Currently I have to problem that the file paths are hard-coded as absolute paths, which will not work on other machines
   * I'll see if I can do something about that
   * Currently I import the files by name, but I figure if I can import them as resources it will be better for this use case
   * Of course, in an actual project, there would most likely a file selector for that, and then the absolute paths wouldn't be a problem, but that would create its own whole set of problems and blow the scope of this challenge
   * So resources it is
   * I now figured out how to do this
+  
 * Next, and this is a minor thing, I'll make it so that no data is displayed at first, and also remove the hard-coded sample data
   * I now did that
-* 
+  
+* So, now there's only one thing left to do: The Database
+  * The Challenge suggests MS Access or SQL Server
+  
+  * I was going to try out MS Access, but since I can't seem to find a docker image of MS Access, but I've found one of SQL Server right here, I suppose I'll be using SQL Server after all
+  
+  * Oh, and it also looks like I'll have to install Docker on this machine
+    * While this is happening, I am already going to have a look at which framework I'm going to use to talk to the database
+      * It seems that these days ADO.NET is all the rage, so I maybe this is a good place to start working with:
+        *  https://docs.microsoft.com/en-us/visualstudio/data-tools/create-a-simple-data-application-by-using-adonet?view=vs-2019
+    
+  * Anyway, I now managed to get the MS SQL Server container running
+  
+    * This looks like a good tutorial for how to communicate between a dockerized SQL Server and ADO.NET:
+      * https://docs.docker.com/samples/aspnet-mssql-compose/
+  
+  * Now as for writing the Data into the Database...
+  
+  * The first thing I'll have to do is create the datatable
+  
+    * Specifically, since I figure that the point of having a database is that it will be able to store data between sessions, I'll have to check if the datatable exists and create it if not
+      * This may be helpful for that:
+        * https://www.completecsharptutorial.com/ado-net/c-ado-net-create-select-rename-and-delete-database-by-c-program.php
+          * Hmm, actually, I'm not so sure about that
+      * Since I'm already working with the DataTable class, it feels like there must be an easier way for that
+      * Now, this looks great for _reading_ data tables:
+        * https://stackoverflow.com/questions/6073382/read-sql-table-into-c-sharp-datatable
+      * This looks like a good start:
+        * https://stackoverflow.com/questions/9075159/how-to-insert-a-data-table-into-sql-server-database-table
+      * I'm still confused, maybe this will help?
+        * https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlbulkcopy?redirectedfrom=MSDN&view=dotnet-plat-ext-5.0
+          * Mmm, no. That's only more complicated and confusing
+      * So, from what I read I need to create the table first anyway
+  
+  * Dragon, I've been working with MongoDB for so long now that I forgot how horrible working with SQL was, and this is a painful reminder of this
+  
+  * Aaanyway, I have now created a test, and it fails because it can't connect to the SQL DB. Apparently the database connection string is wrong
+  
+    * I'm currently using: `@"Server=db;Database=master;User=sa;Password=PizzaIsMagic=^,^=;"`
+  
+    * I have now posted a help request about this on StackOverflow:
+  
+      * https://stackoverflow.com/questions/68564532/connecting-to-sql-database-in-docker-instance-from-c-sharp-fails
+  
+    * If I'm not getting a reply to this or figure it out on my own by tomorrow, I'll forget about Docker and just install a local MS SQL Server for this project
+  
+    * If I use this connection string: `@"Server=localhost,1433;Database=master;User=sa;Password=PizzaIsMagic=^,^=;"` the error message changes to:
+  
+      * ````
+        System.ComponentModel.Win32Exception: The Remote Host refused the network connection
+        ````
+  
+    * I'll now download and install SQLSMS. Odds are that this will be needing this anyway to check on the database
+  
+    * I now figured it out
+  
+    * The error was that the `docker-compose.yml` was still missing this small, but essential part:
+  
+      * ````
+                ports:
+                    - "1433:1433"
+        ````
+  
+    * With that, now the first SQL Connection test works
+  
+* This is as far as I'm getting today
+
+* As I feared, the database logic ate the majority of my time today, and I barely made any progress (which is why I saved the database logic for last)
+
+* However, in the end I was able to establish a connection, and execute the first query, which at the very least is solid groundwork for me to continue with tomorrow
+
+* Elapsed time today: ~4 hours
+
+* Total elapsed time: ~14 hours
 
 
 

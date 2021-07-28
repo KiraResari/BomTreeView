@@ -14,23 +14,25 @@ namespace BomTreeView
 {
     public partial class BomDisplayer : Form
     {
-        private BomDisplayEntryList bomDisplayEntryList;
+        private BomDisplayEntryList BomDisplayEntryList { get; set; }
+        private SqlDatabaseController SqlDatabaseController { get; set; }
 
         public BomDisplayer()
         {
             InitializeComponent();
+            SqlDatabaseController = new SqlDatabaseController();
         }
 
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
-            bomDisplayEntryList = BomDisplayEntryList.BuildEmpty();
+            BomDisplayEntryList = BomDisplayEntryList.BuildEmpty();
             RebuildTreeView();
         }
 
         private void RebuildTreeView()
         {
             bomTreeView.Nodes.Clear();
-            List<BomDisplayEntry> bomEntryList = bomDisplayEntryList.BomEntryList;
+            List<BomDisplayEntry> bomEntryList = BomDisplayEntryList.BomEntryList;
             foreach (
                 BomDisplayEntry bomEntry in bomEntryList
             )
@@ -53,7 +55,7 @@ namespace BomTreeView
             string componentName = selectedNode.Text;
             this.componentNameDisplay.Text = componentName;
             BomDisplayEntry selectedBomEntry 
-                = bomDisplayEntryList.GetBomEntryByComponentName(componentName);
+                = BomDisplayEntryList.GetBomEntryByComponentName(componentName);
             this.quantityDisplay.Text = selectedBomEntry.Quantity.ToString();
             this.typeDisplay.Text = selectedBomEntry.Type;
             this.itemDisplay.Text = selectedBomEntry.Item;
@@ -85,7 +87,7 @@ namespace BomTreeView
         {
             BomAndPartImporter bomAndPartImporter = new BomAndPartImporter();
             BomDbEntryList bomDbEntryList = bomAndPartImporter.ImportBom();
-            bomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
+            BomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
             RebuildTreeView();
             importBomDataButton.Enabled = false;
         }
