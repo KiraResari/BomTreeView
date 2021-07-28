@@ -8,7 +8,6 @@ namespace BomTreeViewTest
     [TestClass]
     public class BomImporterTest
     {
-        private const string SAMPLE_BOM_FILE_PATH = "../../../bom.csv";
 
         [TestMethod]
         public void ImportingBomShouldCreateBomImporterResultWithCorrectNumberOfEntries()
@@ -16,7 +15,7 @@ namespace BomTreeViewTest
             BomImporter bomImporter = new BomImporter();
 
             BomImportResult importResult
-                = bomImporter.ImportBomFile(SAMPLE_BOM_FILE_PATH);
+                = bomImporter.ImportBomFile();
 
             List<BomImportEntry> importedBomBaseEntryList
                 = importResult.ImportedBomEntryList;

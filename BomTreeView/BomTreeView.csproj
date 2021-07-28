@@ -114,8 +114,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\bom.csv" />
-    <None Include="Resources\part.csv" />
+    <EmbeddedResource Include="Resources\bom.csv" />
+    <EmbeddedResource Include="Resources\part.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

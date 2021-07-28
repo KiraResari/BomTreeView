@@ -12,12 +12,12 @@ namespace BomTreeView.Importer
 {
     public class BomAndPartImporter
     {
-        public BomDbEntryList ImportBom(string bomFilePath, string partFilePath)
+        public BomDbEntryList ImportBom()
         {
             BomImporter bomImporter = new BomImporter();
             PartImporter partImporter = new PartImporter();
-            BomImportResult bomImportResult = bomImporter.ImportBomFile(bomFilePath);
-            PartImportResult partImportResult = partImporter.ImportPartFile(partFilePath);
+            BomImportResult bomImportResult = bomImporter.ImportBomFile();
+            PartImportResult partImportResult = partImporter.ImportPartFile();
             BomAndPartCombiner bomAndPartCombiner = new BomAndPartCombiner(
                 bomImportResult,
                 partImportResult

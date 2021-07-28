@@ -15,8 +15,6 @@ namespace BomTreeView
     public partial class BomDisplayer : Form
     {
         private BomDisplayEntryList bomDisplayEntryList;
-        private const string SAMPLE_BOM_FILE_PATH = "E:/projects/BomTreeView/bom.csv";
-        private const string SAMPLE_PART_FILE_PATH = "E:/projects/BomTreeView/part.csv";
 
         public BomDisplayer()
         {
@@ -86,10 +84,7 @@ namespace BomTreeView
         private void ImportBomDataButton_Click(object sender, EventArgs e)
         {
             BomAndPartImporter bomAndPartImporter = new BomAndPartImporter();
-            BomDbEntryList bomDbEntryList = bomAndPartImporter.ImportBom(
-                SAMPLE_BOM_FILE_PATH,
-                SAMPLE_PART_FILE_PATH
-            );
+            BomDbEntryList bomDbEntryList = bomAndPartImporter.ImportBom();
             bomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
             RebuildTreeView();
             importBomDataButton.Enabled = false;

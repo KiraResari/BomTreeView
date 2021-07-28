@@ -8,15 +8,13 @@ namespace BomTreeViewTest
     [TestClass]
     public class PartImporterTest
     {
-        private const string SAMPLE_PART_FILE_PATH = "../../../part.csv";
-
         [TestMethod]
         public void ImportingPartShouldCreatePartImporterResultWithCorrectNumberOfEntries()
         {
             PartImporter partImporter = new PartImporter();
 
             PartImportResult importResult
-                = partImporter.ImportPartFile(SAMPLE_PART_FILE_PATH);
+                = partImporter.ImportPartFile();
 
             List<PartImportEntry> importedPartEntryList
                 = importResult.ImportedPartEntryList;

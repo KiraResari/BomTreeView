@@ -215,4 +215,17 @@
 
 
 
+# 28-Jul-2021
+
+* Now continuing with this
+* Currently I have to problem that the file paths are hard-coded as absolute paths, which will not work on other machines
+  * I'll see if I can do something about that
+  * Currently I import the files by name, but I figure if I can import them as resources it will be better for this use case
+  * Of course, in an actual project, there would most likely a file selector for that, and then the absolute paths wouldn't be a problem, but that would create its own whole set of problems and blow the scope of this challenge
+  * So resources it is
+  * I now figured out how to do this
+  * 
+
+
+
 # ⚓

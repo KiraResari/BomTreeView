@@ -11,8 +11,6 @@ namespace BomTreeViewTest
     [TestClass]
     public class BomAndPartCombinerTest
     {
-        private const string SAMPLE_BOM_FILE_PATH = "../../../bom.csv";
-        private const string SAMPLE_PART_FILE_PATH = "../../../part.csv";
 
         [TestMethod]
         public void CombiningBomAndPartShouldCreateBomDbEntryListWithCorrectNumberOfEntries()
@@ -20,9 +18,9 @@ namespace BomTreeViewTest
             BomImporter bomImporter = new BomImporter();
             PartImporter partImporter = new PartImporter();
             BomImportResult bomImportResult
-                = bomImporter.ImportBomFile(SAMPLE_BOM_FILE_PATH);
+                = bomImporter.ImportBomFile();
             PartImportResult partImportResult
-                = partImporter.ImportPartFile(SAMPLE_PART_FILE_PATH);
+                = partImporter.ImportPartFile();
             BomAndPartCombiner bomAndPartCombiner = new BomAndPartCombiner(
                 bomImportResult,
                 partImportResult
