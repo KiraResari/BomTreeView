@@ -11,11 +11,41 @@ namespace BomTreeView.Database.Tests
     [TestClass()]
     public class SqlDatabaseControllerTests
     {
-        [TestMethod()]
-        public void CheckIfBomTableExistsShouldNotThrowAnError()
+        private static readonly BomDbEntry BOM_DB_ENTRY = new BomDbEntry(
+            "Test Component Name",
+            "Test Parent Name",
+            1,
+            "Test String",
+            "Test Item",
+            "Test Part Number",
+            "Test Title",
+            "Test Material"
+        );
+        private static readonly List<BomDbEntry> BOM_DB_ENTRY_LIST = new List<BomDbEntry>() { BOM_DB_ENTRY };
+        private static readonly BomDbEntries BOM_DB_ENTRIES = new BomDbEntries(BOM_DB_ENTRY_LIST);
+
+        SqlDatabaseController sqlDatabaseController;
+
+        [TestInitialize]
+        public void BeforeEach()
         {
-            SqlDatabaseController sqlDatabaseController = new SqlDatabaseController();
-            sqlDatabaseController.CheckIfBomTableExists();
+            sqlDatabaseController = new SqlDatabaseController();
+            sqlDatabaseController.ClearBomDbEntryTable();
+        }
+
+        [TestMethod()]
+        public void WriteBomDbEntryListToBomDatabaseShouldNotThrowAnError()
+        {
+            sqlDatabaseController.WriteBomDbEntryListToBomDatabase(BOM_DB_ENTRIES);
+        }
+
+        [TestMethod()]
+        public void WriteBomDbEntryListToBomDatabaseShouldCreateCorrectCountOfEntries()
+        {
+            sqlDatabaseController.WriteBomDbEntryListToBomDatabase(BOM_DB_ENTRIES);
+
+            List<BomDbEntry> allEntries = sqlDatabaseController.ReadAllBomDbEntriesFromDatabase();
+            Assert.AreEqual(1, allEntries.Count);
         }
     }
 }

@@ -305,4 +305,45 @@
 
 
 
+# 29-Jul-2021
+
+* Now continuing with this
+
+* I am currently still stuck with trying to get my data into the SQL Server Database
+
+* A friend of mine suggested using Entity Framework or NHibernate for this
+
+* From what I see here, this does indeed seem to be substantially easier:
+
+  * https://www.entityframeworktutorial.net/code-first/simple-code-first-example.aspx
+
+* So, today I'll see if I can get it to run with Entity Framework
+
+  * So far so good, but currently I have this error:
+
+    * ````
+       System.InvalidOperationException: No Entity Framework provider found for the ADO.NET provider with invariant name 'System.Data.SqlClient'. Make sure the provider is registered in the 'entityFramework' section of the application config file. See http://go.microsoft.com/fwlink/?LinkId=260882 for more information.
+      ````
+
+    * Ah, i see. I think this is because very intelligently the EntityFramework was not installed in the Test Project when I added it to the main project. Smart
+
+    * After fixing that it next complains `EntityType 'BomDbEntry' has no key defined. Define the key for this EntityType.`
+
+      * Interesting, and here I was under the impression that appending "Id" to the value I wanted to use as a key would suffice, but let's see...
+      * Soo, I now managed to get this to work, and apparently the database is created in SQL, but no data is written to it
+      * Weird, because I don't get an error message either
+      * Ah. I forgot the rather essential finishing line `ctx.SaveChanges(); ` Silly fox. 
+
+    * So, I'm now currently working on trying to get the actually imported data into the database, and am running into many exciting new errors along the way
+
+    * One of them is that apprently no matter how hard I try, I can't use the ComponentName as primary key because apparently the same components with the same names are used by different parents, so I settled for using auto-generated numeric IDs. That's probably safer anyway. In MongoDB I'd use random `ObjectID`s for this 
+
+  * **SUCCESS**: Now the imported data is successfully written to the Database!
+
+* Next, I want to add support for dropping it before I write, lest the database becomes filled with duplicates in multiple imports
+
+* 
+
+
+
 # ⚓

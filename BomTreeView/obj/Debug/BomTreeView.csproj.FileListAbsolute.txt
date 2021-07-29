@@ -25,3 +25,7 @@ E:\projects\BomTreeView\BomTreeView\bin\Debug\System.Numerics.Vectors.xml
 E:\projects\BomTreeView\BomTreeView\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\projects\BomTreeView\BomTreeView\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.csproj.CopyComplete
+E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.dll
+E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.SqlServer.dll
+E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.xml
+E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.SqlServer.xml

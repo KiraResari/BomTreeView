@@ -22,11 +22,11 @@ namespace BomTreeView.Importer.Combiner
             PartImportResult = partImportResult;
         }
 
-        public BomDbEntryList CombineBomAndPartImportResults() {
+        public BomDbEntries CombineBomAndPartImportResults() {
             BomImportEntry topmostNode = BomImportResult.GetTopmostNode();
             List<BomDbEntry> combinedBomAndPartEntryList
                 = BuildEntryForBomNodeAndChildren(topmostNode);
-            return new BomDbEntryList(combinedBomAndPartEntryList);
+            return new BomDbEntries(combinedBomAndPartEntryList);
         }
 
         private List<BomDbEntry> BuildEntryForBomNodeAndChildren(

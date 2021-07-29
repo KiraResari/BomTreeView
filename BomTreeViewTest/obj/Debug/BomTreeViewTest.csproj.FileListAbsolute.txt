@@ -31,3 +31,8 @@ E:\projects\BomTreeView\BomTreeViewTest\obj\Debug\BomTreeViewTest.csproj.CoreCom
 E:\projects\BomTreeView\BomTreeViewTest\obj\Debug\BomTreeViewTest.csproj.CopyComplete
 E:\projects\BomTreeView\BomTreeViewTest\obj\Debug\BomTreeViewTest.dll
 E:\projects\BomTreeView\BomTreeViewTest\obj\Debug\BomTreeViewTest.pdb
+E:\projects\BomTreeView\BomTreeViewTest\bin\Debug\EntityFramework.dll
+E:\projects\BomTreeView\BomTreeViewTest\bin\Debug\EntityFramework.xml
+E:\projects\BomTreeView\BomTreeViewTest\bin\Debug\BomTreeViewTest.dll.config
+E:\projects\BomTreeView\BomTreeViewTest\bin\Debug\EntityFramework.SqlServer.dll
+E:\projects\BomTreeView\BomTreeViewTest\bin\Debug\EntityFramework.SqlServer.xml

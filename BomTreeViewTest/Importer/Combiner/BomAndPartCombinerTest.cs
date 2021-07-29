@@ -26,11 +26,11 @@ namespace BomTreeViewTest
                 partImportResult
             );
 
-            BomDbEntryList bomDbEntryList
+            BomDbEntries bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
             List<BomDbEntry> bomDbEntries
-                = bomDbEntryList.BomDbEntries;
+                = bomDbEntryList.BomDbEntryList;
             Assert.AreEqual(196, bomDbEntries.Count);
         }
     }

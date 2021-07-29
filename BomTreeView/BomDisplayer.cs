@@ -86,7 +86,9 @@ namespace BomTreeView
         private void ImportBomDataButton_Click(object sender, EventArgs e)
         {
             BomAndPartImporter bomAndPartImporter = new BomAndPartImporter();
-            BomDbEntryList bomDbEntryList = bomAndPartImporter.ImportBom();
+            BomDbEntries bomDbEntryList = bomAndPartImporter.ImportBom();
+            SqlDatabaseController.ClearBomDbEntryTable();
+            SqlDatabaseController.WriteBomDbEntryListToBomDatabase(bomDbEntryList);
             BomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
             RebuildTreeView();
             importBomDataButton.Enabled = false;

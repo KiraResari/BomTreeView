@@ -26,7 +26,7 @@ namespace BomTreeViewTest
                 bomImportResult,
                 partImportResult
             );
-            BomDbEntryList bomDbEntryList
+            BomDbEntries bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
             BomDisplayEntryList bomDisplayEntryList
@@ -50,7 +50,7 @@ namespace BomTreeViewTest
                 bomImportResult,
                 partImportResult
             );
-            BomDbEntryList bomDbEntryList
+            BomDbEntries bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
             BomDisplayEntryList bomDisplayEntryList
