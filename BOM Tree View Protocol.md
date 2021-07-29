@@ -356,7 +356,20 @@
 * For one, I figure it would be nice if we not only write data to the SQL database, but also load something from it
 
   * The Children Table is a nice target for this. I suppose I could make it so that instead of using the in-memory `BomDisplayEntries` to populate the Children Table, the SQL Database is queried for this
-  * 
+  * This works now
+
+* And, for the finishing touch...
+
+  * It would be great if the program could auto-import the data in the database if any exists
+  * I did that now, and also added a button for deleting the data, and they both work like a charm
+
+* I suppose this is it. Now all that would be left to do is seeing if I can compile a standalone version for this, but since today I'm running out of time, I suppose that can wait until tomorrow
+
+* This is as far as I'm getting today
+
+* Elapsed time today: ~3 hours
+
+* Total elapsed time: ~17 hours
 
 
 

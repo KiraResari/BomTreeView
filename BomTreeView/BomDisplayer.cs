@@ -25,8 +25,27 @@ namespace BomTreeView
 
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
-            BomDisplayEntryList = BomDisplayEntries.BuildEmpty();
+            InitializeData();
             RebuildTreeView();
+        }
+
+        private void InitializeData()
+        {
+            if (SqlDatabaseController.DataExistsInBomTable())
+            {
+                List<BomDbEntry> bomDbEntryList
+                    = SqlDatabaseController.ReadAllBomDbEntriesFromDatabase();
+                BomDbEntries bomDbEntries = new BomDbEntries(bomDbEntryList);
+                BomDisplayEntryList = bomDbEntries.ToBomDisplayEntryList();
+                this.statusMessageLabel.Text
+                    = "Data successfully loaded from Database. Import Disabled.";
+                this.importBomDataButton.Enabled = false;
+                this.clearDataButton.Enabled = true;
+            }
+            else { 
+                BomDisplayEntryList = BomDisplayEntries.BuildEmpty();
+                this.statusMessageLabel.Text = "No data found in database";
+            }
         }
 
         private void RebuildTreeView()
@@ -73,7 +92,7 @@ namespace BomTreeView
                 // I could theoretically get the children from the selectedBomEntry here
                 // but I wanted to demonstrate a database lookup at this point
                 BomDbEntries childEntries
-                    = SqlDatabaseController.ReadChildrenFromDatabase(selectedBomEntry);
+                    = SqlDatabaseController.ReadChildrenFromBomDatabase(selectedBomEntry);
                 childrenTable.DataSource = childEntries.ToDataTable();
             }
             else
@@ -91,11 +110,33 @@ namespace BomTreeView
         {
             BomAndPartImporter bomAndPartImporter = new BomAndPartImporter();
             BomDbEntries bomDbEntryList = bomAndPartImporter.ImportBom();
-            SqlDatabaseController.ClearBomDbEntryTable();
             SqlDatabaseController.WriteBomDbEntryListToBomDatabase(bomDbEntryList);
             BomDisplayEntryList = bomDbEntryList.ToBomDisplayEntryList();
             RebuildTreeView();
-            importBomDataButton.Enabled = false;
+            this.importBomDataButton.Enabled = false;
+            this.clearDataButton.Enabled = true;
+            this.statusMessageLabel.Text
+                    = "Data successfully loaded from Database. Import Disabled.";
+        }
+
+        private void ClearDataButton_Click(object sender, EventArgs e)
+        {
+            SqlDatabaseController.ClearBomDbEntryTable();
+            BomDisplayEntryList = BomDisplayEntries.BuildEmpty();
+            RebuildTreeView();
+            this.childrenTable.DataSource = null;
+            this.componentNameDisplay.Text = "";
+            this.quantityDisplay.Text = "";
+            this.typeDisplay.Text = "";
+            this.itemDisplay.Text = "";
+            this.partNumberDisplay.Text = "";
+            this.titleDisplay.Text = "";
+            this.materialDisplay.Text = "";
+            this.parentDisplay.Text = "";
+            this.importBomDataButton.Enabled = true;
+            this.clearDataButton.Enabled = false;
+            this.statusMessageLabel.Text
+                    = "Data successfully deleted from Database.";
         }
     }
 }

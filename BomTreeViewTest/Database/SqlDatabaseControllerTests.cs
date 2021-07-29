@@ -66,7 +66,7 @@ namespace BomTreeView.Database.Tests
             BomDbEntries bomDbEntryList = bomAndPartImporter.ImportBom();
             SqlDatabaseController.WriteBomDbEntryListToBomDatabase(bomDbEntryList);
 
-            BomDbEntries childEntries = SqlDatabaseController.ReadChildrenFromDatabase(DUMMY_VALVE_ENTRY);
+            BomDbEntries childEntries = SqlDatabaseController.ReadChildrenFromBomDatabase(DUMMY_VALVE_ENTRY);
             Assert.AreEqual(41, childEntries.BomDbEntryList.Count);
         }
     }

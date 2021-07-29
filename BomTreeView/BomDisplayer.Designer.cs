@@ -51,6 +51,8 @@ namespace BomTreeView
             this.exitButton = new System.Windows.Forms.Button();
             this.componentOverviewLabel = new System.Windows.Forms.Label();
             this.importBomDataButton = new System.Windows.Forms.Button();
+            this.statusMessageLabel = new System.Windows.Forms.Label();
+            this.clearDataButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.childrenTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,7 @@ namespace BomTreeView
             this.childrenTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.childrenTable.Location = new System.Drawing.Point(267, 200);
             this.childrenTable.Name = "childrenTable";
-            this.childrenTable.Size = new System.Drawing.Size(800, 250);
+            this.childrenTable.Size = new System.Drawing.Size(800, 234);
             this.childrenTable.TabIndex = 7;
             // 
             // childrenLabel
@@ -260,11 +262,32 @@ namespace BomTreeView
             this.importBomDataButton.UseVisualStyleBackColor = true;
             this.importBomDataButton.Click += new System.EventHandler(this.ImportBomDataButton_Click);
             // 
+            // statusMessageLabel
+            // 
+            this.statusMessageLabel.AutoSize = true;
+            this.statusMessageLabel.Location = new System.Drawing.Point(240, 437);
+            this.statusMessageLabel.Name = "statusMessageLabel";
+            this.statusMessageLabel.Size = new System.Drawing.Size(0, 13);
+            this.statusMessageLabel.TabIndex = 22;
+            // 
+            // clearDataButton
+            // 
+            this.clearDataButton.Enabled = false;
+            this.clearDataButton.Location = new System.Drawing.Point(891, 44);
+            this.clearDataButton.Name = "clearDataButton";
+            this.clearDataButton.Size = new System.Drawing.Size(176, 23);
+            this.clearDataButton.TabIndex = 23;
+            this.clearDataButton.Text = "Delete BOM Data";
+            this.clearDataButton.UseVisualStyleBackColor = true;
+            this.clearDataButton.Click += new System.EventHandler(this.ClearDataButton_Click);
+            // 
             // BomDisplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.clearDataButton);
+            this.Controls.Add(this.statusMessageLabel);
             this.Controls.Add(this.importBomDataButton);
             this.Controls.Add(this.componentOverviewLabel);
             this.Controls.Add(this.exitButton);
@@ -320,6 +343,8 @@ namespace BomTreeView
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label componentOverviewLabel;
         private System.Windows.Forms.Button importBomDataButton;
+        private System.Windows.Forms.Label statusMessageLabel;
+        private System.Windows.Forms.Button clearDataButton;
     }
 }
 

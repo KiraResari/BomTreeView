@@ -37,13 +37,19 @@ namespace BomTreeView.Database
             return BomDatabaseContext.BomDbEntrySet.ToList();
         }
 
-        public BomDbEntries ReadChildrenFromDatabase(BomDisplayEntry selectedBomEntry)
+        public BomDbEntries ReadChildrenFromBomDatabase(BomDisplayEntry selectedBomEntry)
         {
             String parentName = selectedBomEntry.ComponentName;
             List<BomDbEntry> bomDbEntryList = BomDatabaseContext.BomDbEntrySet
                 .Where(entry=>entry.ParentName == parentName)
                 .ToList();
             return new BomDbEntries(bomDbEntryList);
+        }
+
+        public bool DataExistsInBomTable()
+        {
+            List<BomDbEntry> allBomDbEntries = ReadAllBomDbEntriesFromDatabase();
+            return allBomDbEntries.Count > 0;
         }
     }
 }
