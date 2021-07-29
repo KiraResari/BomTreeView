@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace BomTreeView.Database
 {
@@ -12,11 +13,11 @@ namespace BomTreeView.Database
             BomDbEntryList = bomDbEntryList;
         }
 
-        public BomDisplayEntryList ToBomDisplayEntryList()
+        public BomDisplayEntries ToBomDisplayEntryList()
         {
             BomDbEntry topmostEntry = GetTopmostEntry();
             BomDisplayEntry topmostDisplayEntry = BuildBomDisplayEntry(topmostEntry);
-            return new BomDisplayEntryList(topmostDisplayEntry);
+            return new BomDisplayEntries(topmostDisplayEntry);
         }
 
         private BomDbEntry GetTopmostEntry()
@@ -70,6 +71,34 @@ namespace BomTreeView.Database
                 }
             }
             return childBomDbEntries;
+        }
+
+        public DataTable ToDataTable()
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("COMPONENT_NAME", typeof(string));
+            dataTable.Columns.Add("PART_NUMBER", typeof(string));
+            dataTable.Columns.Add("TITLE", typeof(string));
+            dataTable.Columns.Add("QUANTITY", typeof(int));
+            dataTable.Columns.Add("TYPE", typeof(string));
+            dataTable.Columns.Add("ITEM ", typeof(string));
+            dataTable.Columns.Add("MATERIAL", typeof(string));
+
+            foreach (BomDbEntry bomDisplayEntry in BomDbEntryList)
+            {
+                dataTable.Rows.Add(
+                    bomDisplayEntry.ComponentName,
+                    bomDisplayEntry.PartNumber,
+                    bomDisplayEntry.Title,
+                    bomDisplayEntry.Quantity,
+                    bomDisplayEntry.Type,
+                    bomDisplayEntry.Item,
+                    bomDisplayEntry.Material
+                );
+            }
+
+            return dataTable;
         }
     }
 }

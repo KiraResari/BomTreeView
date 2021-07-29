@@ -342,7 +342,21 @@
 
 * Next, I want to add support for dropping it before I write, lest the database becomes filled with duplicates in multiple imports
 
-* 
+  * I did that now
+
+* With that, I suppose I have fulfilled the very basic requirements of the challenge:
+
+  * ☑ The Import is working correctly
+  * ☑ The tree view is working correctly
+  * ☑ The children table is working correctly
+  * ☑ The data gets stored in an SQL Server table
+
+* Now, since I have some time left, let's talk about bonus goals
+
+* For one, I figure it would be nice if we not only write data to the SQL database, but also load something from it
+
+  * The Children Table is a nice target for this. I suppose I could make it so that instead of using the in-memory `BomDisplayEntries` to populate the Children Table, the SQL Database is queried for this
+  * 
 
 
 

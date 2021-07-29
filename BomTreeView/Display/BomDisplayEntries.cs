@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BomTreeView
 {
-    public class BomDisplayEntryList
+    public class BomDisplayEntries
     {
         public List<BomDisplayEntry> BomEntryList { get; set; }
 
-        public BomDisplayEntryList(List<BomDisplayEntry> bomEntryList)
+        public BomDisplayEntries(List<BomDisplayEntry> bomEntryList)
         {
             this.BomEntryList = bomEntryList;
         }
 
-        public BomDisplayEntryList(BomDisplayEntry bomDisplayEntry)
+        public BomDisplayEntries(BomDisplayEntry bomDisplayEntry)
         {
             BomEntryList = new List<BomDisplayEntry>() { bomDisplayEntry };
         }
@@ -44,10 +45,38 @@ namespace BomTreeView
             return flattenedBomEntryList;
         }
 
-        public static BomDisplayEntryList BuildEmpty()
+        public static BomDisplayEntries BuildEmpty()
         {
             List<BomDisplayEntry> bomEntryList = new List<BomDisplayEntry>();
-            return new BomDisplayEntryList(bomEntryList);
+            return new BomDisplayEntries(bomEntryList);
+        }
+
+        public DataTable ToDataTable()
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("COMPONENT_NAME", typeof(string));
+            dataTable.Columns.Add("PART_NUMBER", typeof(string));
+            dataTable.Columns.Add("TITLE", typeof(string));
+            dataTable.Columns.Add("QUANTITY", typeof(int));
+            dataTable.Columns.Add("TYPE", typeof(string));
+            dataTable.Columns.Add("ITEM ", typeof(string));
+            dataTable.Columns.Add("MATERIAL", typeof(string));
+
+            foreach (BomDisplayEntry bomDisplayEntry in BomEntryList)
+            {
+                dataTable.Rows.Add(
+                    bomDisplayEntry.ComponentName,
+                    bomDisplayEntry.PartNumber,
+                    bomDisplayEntry.Title,
+                    bomDisplayEntry.Quantity,
+                    bomDisplayEntry.Type,
+                    bomDisplayEntry.Item,
+                    bomDisplayEntry.Material
+                );
+            }
+
+            return dataTable;
         }
     }
 }

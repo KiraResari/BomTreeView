@@ -14,7 +14,7 @@ namespace BomTreeView
 {
     public partial class BomDisplayer : Form
     {
-        private BomDisplayEntryList BomDisplayEntryList { get; set; }
+        private BomDisplayEntries BomDisplayEntryList { get; set; }
         private SqlDatabaseController SqlDatabaseController { get; set; }
 
         public BomDisplayer()
@@ -25,7 +25,7 @@ namespace BomTreeView
 
         private void BomDisplayer_Load(object sender, EventArgs e)
         {
-            BomDisplayEntryList = BomDisplayEntryList.BuildEmpty();
+            BomDisplayEntryList = BomDisplayEntries.BuildEmpty();
             RebuildTreeView();
         }
 
@@ -70,7 +70,11 @@ namespace BomTreeView
         {
             if (selectedBomEntry.HasChildren())
             {
-                childrenTable.DataSource = selectedBomEntry.GetChildrenTable();
+                // I could theoretically get the children from the selectedBomEntry here
+                // but I wanted to demonstrate a database lookup at this point
+                BomDbEntries childEntries
+                    = SqlDatabaseController.ReadChildrenFromDatabase(selectedBomEntry);
+                childrenTable.DataSource = childEntries.ToDataTable();
             }
             else
             {

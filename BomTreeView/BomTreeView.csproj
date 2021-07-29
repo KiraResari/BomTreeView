@@ -85,7 +85,7 @@
     <Compile Include="Database\BomDbEntry.cs" />
     <Compile Include="Database\BomDbEntries.cs" />
     <Compile Include="Database\SqlDatabaseController.cs" />
-    <Compile Include="Display\BomDisplayEntryList.cs" />
+    <Compile Include="Display\BomDisplayEntries.cs" />
     <Compile Include="BomDisplayer.cs">
       <SubType>Form</SubType>
     </Compile>

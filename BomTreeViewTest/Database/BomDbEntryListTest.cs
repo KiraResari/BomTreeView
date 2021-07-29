@@ -29,7 +29,7 @@ namespace BomTreeViewTest
             BomDbEntries bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
-            BomDisplayEntryList bomDisplayEntryList
+            BomDisplayEntries bomDisplayEntryList
                 = bomDbEntryList.ToBomDisplayEntryList();
 
             List<BomDisplayEntry> topLevelEntries
@@ -53,7 +53,7 @@ namespace BomTreeViewTest
             BomDbEntries bomDbEntryList
                 = bomAndPartCombiner.CombineBomAndPartImportResults();
 
-            BomDisplayEntryList bomDisplayEntryList
+            BomDisplayEntries bomDisplayEntryList
                 = bomDbEntryList.ToBomDisplayEntryList();
 
             List<BomDisplayEntry> allEntries
