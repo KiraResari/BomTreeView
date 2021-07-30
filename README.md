@@ -2,8 +2,9 @@
 A project for importing a BOM and displaying it in a Tree View
 
 To run the BomTreeView:
-1.) Go to the `SQL Server Container` folder and run the included SQL Server Docker container using either the `Start SQL Server Container.bat` file or by using `docker-compose up` in thsi folder from the console. (Docker must be installed and running on your machine)
-2.) Go to the `BomTreeView\bin\Debug` folder and run `BomTreeView.exe`
+
+1. Go to the `SQL Server Container` folder and run the included SQL Server Docker container using either the `Start SQL Server Container.bat` file or by using `docker-compose up` in thsi folder from the console. (Docker must be installed and running on your machine)
+2. Go to the `BomTreeView\bin\Debug` folder and run `BomTreeView.exe`
 
 * Once the program is running, you can import the embedded sample data using the "Import BOM Data" button.
 * The imported data is stored in the running SQL Database.
