@@ -373,4 +373,18 @@
 
 
 
+# 30-Jul-2021
+
+* Now continuing with this
+* As far as I can tell, everything is working as specified in the Challenge
+* Also, I added a few nice little extras, such as the ability to delete the data, and loading of data on startup
+* Now, to wrap this up, I would like to compile this into an executable file that can be opened anywhere, as long as said anywhere has a correctly configured dockerized database running (database configurability is outside the scope of this challenge)
+* So, it turns out that this is already done, but for some reason the Configuration Manager in Visual Studio is not letting me condense it into a single file, and the button to enable the advanced settings that is referenced in the official documentation is not there
+* Oh well, at least I confirmed that there's a working `BomTreeView.exe` under `\BomTreeView\BomTreeView\bin\Debug`. I suppose that will be enough for now
+* I'll wrap this up by writing a readme file with instructions on how to run this
+* Elapsed time today: ~1 hour
+* Total elapsed time: ~18 hours
+
+
+
 # ⚓

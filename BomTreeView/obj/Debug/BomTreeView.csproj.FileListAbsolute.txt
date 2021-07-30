@@ -29,3 +29,7 @@ E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.dll
 E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.SqlServer.dll
 E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.xml
 E:\projects\BomTreeView\BomTreeView\bin\Debug\EntityFramework.SqlServer.xml
+E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.exe.manifest
+E:\projects\BomTreeView\BomTreeView\bin\Debug\BomTreeView.application
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.exe.manifest
+E:\projects\BomTreeView\BomTreeView\obj\Debug\BomTreeView.application
